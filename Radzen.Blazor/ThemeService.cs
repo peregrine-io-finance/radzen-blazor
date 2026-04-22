@@ -486,6 +486,8 @@ namespace Radzen
 
         internal bool Embedded => Theme switch
         {
+            "peregrine" => true,
+            "peregrine-dark" => true,
             "material" => true,
             "material-dark" => true,
             "standard" => true,
