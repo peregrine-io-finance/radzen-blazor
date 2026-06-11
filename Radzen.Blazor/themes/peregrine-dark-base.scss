@@ -7,16 +7,18 @@ $theme-name: peregrine-dark;
 
 // Theme Colors
 
+// Peregrine brand palette, dark — navy-anchored on Blue 0/Blue 1; the PDF forbids black
+// or dark-gray backgrounds (docs/peregrine-theme/BRAND-SPEC.md)
 $rz-white: #ffffff !default;
-$rz-black: #000000 !default;
+$rz-black: #111111 !default; // brand Black
 
-$rz-base: #383838 !default;
-$rz-primary: #bb86fc !default;
-$rz-secondary: #01a299 !default;
-$rz-info: #2196f3 !default;
-$rz-success: #4caf50 !default;
-$rz-warning: #ff9800 !default;
-$rz-danger: #f44336 !default;
+$rz-base: #264757 !default; // Blue 1
+$rz-primary: #ff6201 !default; // Bright Orange
+$rz-secondary: #9dc9da !default; // Blue 2
+$rz-info: #4d9fbd !default; // Trust blue lightened for navy surfaces
+$rz-success: #27c291 !default; // product palette green (dark)
+$rz-warning: #e9b724 !default; // product palette yellow (dark)
+$rz-danger: #f57c93 !default; // product palette red (dark)
 
 $rz-series-1: #3700b3 !default;
 $rz-series-2: #ba68c8 !default;
@@ -43,25 +45,27 @@ $rz-series-22: #c5e1a5 !default;
 $rz-series-23: #80cbc4 !default;
 $rz-series-24: #b3e5fc !default;
 
-$rz-base-50: #e0e0e0 !default;
-$rz-base-100: #a0a0a0 !default;
-$rz-base-200: #6c6c6c !default;
-$rz-base-300: #545454 !default;
-$rz-base-400: #383838 !default;
-$rz-base-500: #333333 !default;
-$rz-base-600: #2e2e2e !default;
-$rz-base-700: #252525 !default;
-$rz-base-800: #1e1e1e !default;
-$rz-base-900: #121212 !default;
-$rz-base-light: #a0a0a0 !default;
+// Navy surface ladder: body on Blue 0, surfaces stepping toward Blue 1;
+// text tiers Off-White / Blue 3 / Blue 2.
+$rz-base-50: #fffef9 !default; // Off-White
+$rz-base-100: #e2efff !default; // Blue 3
+$rz-base-200: #9dc9da !default; // Blue 2
+$rz-base-300: #628899 !default;
+$rz-base-400: #264757 !default; // Blue 1
+$rz-base-500: #244352 !default;
+$rz-base-600: #213d4b !default;
+$rz-base-700: #1e3744 !default;
+$rz-base-800: #1c3340 !default;
+$rz-base-900: #172935 !default; // Blue 0
+$rz-base-light: #e2efff !default;
 $rz-base-lighter: #ffffff !default;
-$rz-base-dark: #252525 !default;
-$rz-base-darker: #000000 !default;
+$rz-base-dark: #1e3744 !default;
+$rz-base-darker: #0f1b22 !default;
 
-$rz-primary-light: mix($rz-white, $rz-primary, 20%) !default;
-$rz-primary-lighter: rgba($rz-primary, .12) !default;
-$rz-primary-dark: mix($rz-black, $rz-primary, 20%) !default;
-$rz-primary-darker: mix($rz-black, $rz-primary, 32%) !default;
+$rz-primary-light: #ff7621 !default; // peregrine.io hover orange
+$rz-primary-lighter: rgba($rz-primary, .16) !default; // .16: 12% orange reads muddy on navy
+$rz-primary-dark: #ba4801 !default; // explicit: mix() shades leave white text under 4.5:1
+$rz-primary-darker: #9c3c00 !default;
 
 $rz-secondary-light: mix($rz-white, $rz-secondary, 20%) !default;
 $rz-secondary-lighter: rgba($rz-secondary, .12) !default;
@@ -167,40 +171,42 @@ $rz-theme-colors-map: map-merge(
     "on-base-dark": $rz-white,
     "on-base-darker": $rz-white,
 
-    "on-primary": $rz-white,
-    "on-primary-light": $rz-white,
-    "on-primary-lighter": $rz-primary,
+    // Contrast pairs verified ≥ 4.5:1 (AA): black on the bright hues, Blue 0 on Blue 2,
+    // white selection text on the orange tint (the hue itself only reaches 4.45:1).
+    "on-primary": $rz-black,
+    "on-primary-light": $rz-black,
+    "on-primary-lighter": $rz-white,
     "on-primary-dark": $rz-white,
     "on-primary-darker": $rz-white,
-    
-    "on-secondary": $rz-white,
-    "on-secondary-light": $rz-white,
+
+    "on-secondary": $rz-base-900,
+    "on-secondary-light": $rz-base-900,
     "on-secondary-lighter": $rz-secondary,
-    "on-secondary-dark": $rz-white,
-    "on-secondary-darker": $rz-white,
-    
-    "on-info": $rz-white,
-    "on-info-light": $rz-white,
-    "on-info-lighter": $rz-info,
+    "on-secondary-dark": $rz-black,
+    "on-secondary-darker": $rz-black,
+
+    "on-info": $rz-black,
+    "on-info-light": $rz-black,
+    "on-info-lighter": $rz-base-100,
     "on-info-dark": $rz-white,
     "on-info-darker": $rz-white,
-    
-    "on-success": $rz-white,
-    "on-success-light": $rz-white,
-    "on-success-lighter": $rz-success,
-    "on-success-dark": $rz-white,
+
+    "on-success": $rz-black,
+    "on-success-light": $rz-black,
+    "on-success-lighter": $rz-success-light,
+    "on-success-dark": $rz-black,
     "on-success-darker": $rz-white,
-    
-    "on-warning": $rz-white,
-    "on-warning-light": $rz-white,
+
+    "on-warning": $rz-black,
+    "on-warning-light": $rz-black,
     "on-warning-lighter": $rz-warning,
-    "on-warning-dark": $rz-white,
-    "on-warning-darker": $rz-white,
-    
-    "on-danger": $rz-white,
-    "on-danger-light": $rz-white,
-    "on-danger-lighter": $rz-danger,
-    "on-danger-dark": $rz-white,
+    "on-warning-dark": $rz-black,
+    "on-warning-darker": $rz-black,
+
+    "on-danger": $rz-black,
+    "on-danger-light": $rz-black,
+    "on-danger-lighter": $rz-danger-light,
+    "on-danger-dark": $rz-black,
     "on-danger-darker": $rz-white,
     
     "series-1": $rz-series-1,
@@ -249,18 +255,18 @@ $rz-border-hover: var(--rz-border-width) solid var(--rz-base-100) !default;
 $rz-border-focus: var(--rz-border-width) solid var(--rz-primary) !default;
 $rz-border-disabled: var(--rz-border-width) solid var(--rz-base-500) !default;
 
-// Shadow
+// Shadow — flat, subtle scale (heavier alphas than light: shadows must read on navy)
 $rz-shadow-0: none !default;
-$rz-shadow-1: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-2: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-3: 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-4: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-5: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-6: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-7: 0px 9px 12px rgba(0, 0, 0, 0.14), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 5px 6px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-8: 0px 12px 17px rgba(0, 0, 0, 0.14), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 7px 8px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-9: 0px 16px 24px rgba(0, 0, 0, 0.14), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-10: 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.14) !default;
+$rz-shadow-1: 0px 1px 2px rgba(0, 0, 0, 0.20), 0px 1px 1px rgba(0, 0, 0, 0.12) !default;
+$rz-shadow-2: 0px 2px 3px rgba(0, 0, 0, 0.22), 0px 1px 2px rgba(0, 0, 0, 0.14) !default;
+$rz-shadow-3: 0px 3px 6px rgba(0, 0, 0, 0.24), 0px 2px 4px rgba(0, 0, 0, 0.14) !default;
+$rz-shadow-4: 0px 4px 8px rgba(0, 0, 0, 0.26), 0px 2px 4px rgba(0, 0, 0, 0.16) !default;
+$rz-shadow-5: 0px 6px 12px rgba(0, 0, 0, 0.28), 0px 3px 6px rgba(0, 0, 0, 0.18) !default;
+$rz-shadow-6: 0px 8px 16px rgba(0, 0, 0, 0.30), 0px 4px 8px rgba(0, 0, 0, 0.20) !default;
+$rz-shadow-7: 0px 10px 20px rgba(0, 0, 0, 0.32), 0px 5px 10px rgba(0, 0, 0, 0.20) !default;
+$rz-shadow-8: 0px 12px 24px rgba(0, 0, 0, 0.34), 0px 6px 12px rgba(0, 0, 0, 0.22) !default;
+$rz-shadow-9: 0px 16px 32px -8px rgba(0, 0, 0, 0.55) !default;
+$rz-shadow-10: 0px 18px 40px -12px rgba(0, 0, 0, 0.70) !default;
 
 // Base Styles Map
 
@@ -276,7 +282,7 @@ $base-styles-map: map-merge(
       color: var(--rz-text-color)
     ),
     dark: (
-      background-color: var(--rz-black),
+      background-color: var(--rz-base-darker), // navy, not black (PDF dark-background rule)
       color: var(--rz-text-color)
     )
   ),

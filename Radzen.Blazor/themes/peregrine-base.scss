@@ -62,8 +62,8 @@ $rz-base-darker: #111111 !default;
 
 $rz-primary-light: #ff7621 !default; // peregrine.io hover orange
 $rz-primary-lighter: rgba($rz-primary, .12) !default;
-$rz-primary-dark: mix($rz-black, $rz-primary, 20%) !default;
-$rz-primary-darker: mix($rz-black, $rz-primary, 32%) !default;
+$rz-primary-dark: #ba4801 !default; // explicit: mix() shades leave white text under 4.5:1
+$rz-primary-darker: #9c3c00 !default;
 
 $rz-secondary-light: mix($rz-white, $rz-secondary, 20%) !default;
 $rz-secondary-lighter: rgba($rz-secondary, .12) !default;
