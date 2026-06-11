@@ -6,16 +6,17 @@ $theme-name: peregrine;
 
 // Theme Colors
 
+// Peregrine brand palette — Brand Guidelines PDF v1 pp. 22–23 (docs/peregrine-theme/BRAND-SPEC.md)
 $rz-white: #ffffff !default;
-$rz-black: #000000 !default;
+$rz-black: #111111 !default; // brand Black
 
-$rz-base: #eeeeee !default;
-$rz-primary: #4340D2 !default;
-$rz-secondary: #e31c65 !default;
-$rz-info: #2196f3 !default;
-$rz-success: #4caf50 !default;
-$rz-warning: #ff9800 !default;
-$rz-danger: #f44336 !default;
+$rz-base: #eeeeee !default; // brand gray (lightest)
+$rz-primary: #ff6201 !default; // Bright Orange — high-visibility accent
+$rz-secondary: #264757 !default; // Blue 1
+$rz-info: #0076a0 !default; // Trust blue (peregrine.io)
+$rz-success: #1ba572 !default; // product palette green
+$rz-warning: #d99919 !default; // product palette yellow
+$rz-danger: #ed5f74 !default; // product palette red
 
 $rz-series-1: #3700b3 !default;
 $rz-series-2: #ba68c8 !default;
@@ -42,22 +43,24 @@ $rz-series-22: #c5e1a5 !default;
 $rz-series-23: #80cbc4 !default;
 $rz-series-24: #b3e5fc !default;
 
-$rz-base-50: #fafafa !default;
-$rz-base-100: #f5f5f5 !default;
+// Warm-gray neutral ramp from the PDF grays (#eeeeee/#dcdbd7/#a5a49f/#5a5955/#2b2926),
+// interpolated at 50/100/500/700; 900 = brand Black.
+$rz-base-50: #fafaf7 !default;
+$rz-base-100: #f4f4f1 !default;
 $rz-base-200: #eeeeee !default;
-$rz-base-300: #e0e0e0 !default;
-$rz-base-400: #bdbdbd !default;
-$rz-base-500: #9e9e9e !default;
-$rz-base-600: #757575 !default;
-$rz-base-700: #616161 !default;
-$rz-base-800: #424242 !default;
-$rz-base-900: #212121 !default;
-$rz-base-light: #f5f5f5 !default;
-$rz-base-lighter: #ffffff !default;
-$rz-base-dark: #757575 !default;
-$rz-base-darker: #212121 !default;
+$rz-base-300: #dcdbd7 !default;
+$rz-base-400: #a5a49f !default;
+$rz-base-500: #8a8984 !default;
+$rz-base-600: #5a5955 !default;
+$rz-base-700: #44433f !default;
+$rz-base-800: #2b2926 !default;
+$rz-base-900: #111111 !default;
+$rz-base-light: #f4f4f1 !default;
+$rz-base-lighter: #fffef9 !default; // Off-White
+$rz-base-dark: #5a5955 !default;
+$rz-base-darker: #111111 !default;
 
-$rz-primary-light: mix($rz-white, $rz-primary, 20%) !default;
+$rz-primary-light: #ff7621 !default; // peregrine.io hover orange
 $rz-primary-lighter: rgba($rz-primary, .12) !default;
 $rz-primary-dark: mix($rz-black, $rz-primary, 20%) !default;
 $rz-primary-darker: mix($rz-black, $rz-primary, 32%) !default;
@@ -90,11 +93,11 @@ $rz-danger-darker: mix($rz-black, $rz-danger, 32%) !default;
 // Theme Constants
 
 $rz-border-width: 1px !default;
-$rz-border-radius: 4px !default;
+$rz-border-radius: 0px !default; // square corners are a brand trait
 $rz-root-font-size: 16px !default;
 $rz-body-font-size: 1rem !default;
 $rz-body-line-height: 1.5 !default;
-$rz-body-background-color: var(--rz-base-100) !default;
+$rz-body-background-color: #fffef9 !default; // Off-White
 $rz-text-font-family: Roboto, sans-serif !default;
 $rz-outline-offset: 2px !default;
 $rz-outline-width: 2px !default;
@@ -166,39 +169,41 @@ $rz-theme-colors-map: map-merge(
     "on-base-dark": $rz-white,
     "on-base-darker": $rz-white,
 
-    "on-primary": $rz-white,
-    "on-primary-light": $rz-white,
-    "on-primary-lighter": $rz-primary,
+    // Contrast pairs verified ≥ 4.5:1 (AA). The PDF approves black text on orange (p. 25);
+    // white on Bright Orange is only 3.0:1.
+    "on-primary": $rz-black,
+    "on-primary-light": $rz-black,
+    "on-primary-lighter": $rz-primary-darker,
     "on-primary-dark": $rz-white,
     "on-primary-darker": $rz-white,
-    
+
     "on-secondary": $rz-white,
     "on-secondary-light": $rz-white,
     "on-secondary-lighter": $rz-secondary,
     "on-secondary-dark": $rz-white,
     "on-secondary-darker": $rz-white,
-    
+
     "on-info": $rz-white,
-    "on-info-light": $rz-white,
-    "on-info-lighter": $rz-info,
+    "on-info-light": $rz-black,
+    "on-info-lighter": $rz-info-dark,
     "on-info-dark": $rz-white,
     "on-info-darker": $rz-white,
-    
-    "on-success": $rz-white,
-    "on-success-light": $rz-white,
-    "on-success-lighter": $rz-success,
+
+    "on-success": $rz-black,
+    "on-success-light": $rz-black,
+    "on-success-lighter": $rz-success-darker,
     "on-success-dark": $rz-white,
     "on-success-darker": $rz-white,
-    
-    "on-warning": $rz-white,
-    "on-warning-light": $rz-white,
-    "on-warning-lighter": $rz-warning,
-    "on-warning-dark": $rz-white,
+
+    "on-warning": $rz-black,
+    "on-warning-light": $rz-black,
+    "on-warning-lighter": mix($rz-black, $rz-warning, 45%), // warning-darker only reaches 4.4:1 on the tint
+    "on-warning-dark": $rz-black,
     "on-warning-darker": $rz-white,
-    
-    "on-danger": $rz-white,
-    "on-danger-light": $rz-white,
-    "on-danger-lighter": $rz-danger,
+
+    "on-danger": $rz-black,
+    "on-danger-light": $rz-black,
+    "on-danger-lighter": $rz-danger-darker,
     "on-danger-dark": $rz-white,
     "on-danger-darker": $rz-white,
     
@@ -245,18 +250,19 @@ $rz-border-hover: var(--rz-border-width) solid var(--rz-base-900) !default;
 $rz-border-focus: var(--rz-border-width) solid var(--rz-primary) !default;
 $rz-border-disabled: var(--rz-border-width) solid var(--rz-base-300) !default;
 
-// Shadow
+// Shadow — flat, subtle scale per peregrine.io (drop-shadow-lg ≈ shadow-4, hero ≈ shadow-10);
+// no Material elevation drama.
 $rz-shadow-0: none !default;
-$rz-shadow-1: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-2: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-3: 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-4: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-5: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-6: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-7: 0px 9px 12px rgba(0, 0, 0, 0.14), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 5px 6px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-8: 0px 12px 17px rgba(0, 0, 0, 0.14), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 7px 8px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-9: 0px 16px 24px rgba(0, 0, 0, 0.14), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.14) !default;
-$rz-shadow-10: 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.14) !default;
+$rz-shadow-1: 0px 1px 2px rgba(17, 17, 17, 0.06), 0px 1px 1px rgba(17, 17, 17, 0.04) !default;
+$rz-shadow-2: 0px 2px 3px rgba(17, 17, 17, 0.07), 0px 1px 2px rgba(17, 17, 17, 0.05) !default;
+$rz-shadow-3: 0px 3px 6px rgba(17, 17, 17, 0.08), 0px 2px 4px rgba(17, 17, 17, 0.05) !default;
+$rz-shadow-4: 0px 4px 8px rgba(17, 17, 17, 0.10), 0px 2px 4px rgba(17, 17, 17, 0.06) !default;
+$rz-shadow-5: 0px 6px 12px rgba(17, 17, 17, 0.11), 0px 3px 6px rgba(17, 17, 17, 0.07) !default;
+$rz-shadow-6: 0px 8px 16px rgba(17, 17, 17, 0.12), 0px 4px 8px rgba(17, 17, 17, 0.08) !default;
+$rz-shadow-7: 0px 10px 20px rgba(17, 17, 17, 0.13), 0px 5px 10px rgba(17, 17, 17, 0.08) !default;
+$rz-shadow-8: 0px 12px 24px rgba(17, 17, 17, 0.14), 0px 6px 12px rgba(17, 17, 17, 0.09) !default;
+$rz-shadow-9: 0px 16px 32px -8px rgba(17, 17, 17, 0.35) !default;
+$rz-shadow-10: 0px 18px 40px -12px rgba(17, 17, 17, 0.50) !default;
 
 //---- Components
 
@@ -399,17 +405,17 @@ $input-focus-shadow: inset 0 0 0 1px var(--rz-primary) !default;
 $input-disabled-background-color: var(--rz-base-background-color) !default;
 $input-disabled-color: var(--rz-text-disabled-color) !default;
 
-// Header
-$header-background-color: var(--rz-primary) !default;
+// Header — Blue 1 surface; Bright Orange must never be a background (PDF p. 22)
+$header-background-color: var(--rz-secondary) !default;
 $header-border: none !default;
-$header-color: var(--rz-on-primary) !default;
+$header-color: var(--rz-on-secondary) !default;
 $header-shadow: var(--rz-shadow-4) !default;
 
 .rz-header {
   a,
   a:hover,
   a:focus {
-    color: var(--rz-on-primary);
+    color: var(--rz-on-secondary);
   }
 }
 
@@ -469,10 +475,10 @@ $panel-shadow: var(--rz-shadow-1) !default;
 
 // SidebarToggle
 $sidebar-toggle-border: none !default;
-$sidebar-toggle-color: var(--rz-on-primary) !default;
+$sidebar-toggle-color: var(--rz-on-secondary) !default;
 $sidebar-toggle-background-color: transparent !default;
-$sidebar-toggle-hover-color: var(--rz-on-primary-light) !default;
-$sidebar-toggle-hover-background-color: var(--rz-primary-light) !default;
+$sidebar-toggle-hover-color: var(--rz-on-secondary-light) !default;
+$sidebar-toggle-hover-background-color: var(--rz-secondary-light) !default;
 $sidebar-toggle-hover-border-radius: 50% !default;
 
 .sidebar-toggle {
@@ -493,11 +499,11 @@ $menu-item-icon-color: $menu-item-color !default;
 $menu-item-icon-hover-color: $menu-item-hover-color !default;
 $menu-top-item-padding-block: 0.5rem !default;
 $menu-top-item-padding-inline: 0.5rem !default;
-$menu-top-item-color: var(--rz-on-primary) !default;
-$menu-top-item-background-color: var(--rz-primary) !default;
-$menu-top-item-hover-color: var(--rz-on-primary) !default;
+$menu-top-item-color: var(--rz-on-secondary) !default;
+$menu-top-item-background-color: var(--rz-secondary) !default;
+$menu-top-item-hover-color: var(--rz-on-secondary) !default;
 $menu-top-item-hover-background-color: transparent !default;
-$menu-top-item-selected-color: var(--rz-on-primary) !default;
+$menu-top-item-selected-color: var(--rz-on-secondary) !default;
 $menu-top-item-icon-color: $menu-top-item-color !default;
 $menu-top-item-icon-hover-color: $menu-top-item-hover-color !default;
 $context-menu-padding-block: 0.5rem !default;
@@ -570,7 +576,7 @@ $panel-menu-icon-2nd-level-margin-inline: -2.25rem 1rem !default;
 
 // ProfileMenu
 $profile-menu-background-color: var(--rz-base-background-color) !default;
-$profile-menu-top-item-background-color: var(--rz-primary) !default;
+$profile-menu-top-item-background-color: var(--rz-secondary) !default;
 $profile-menu-border: none !default;
 $profile-menu-padding-block: 0.5rem !default;
 $profile-menu-padding-inline: 1rem !default;
