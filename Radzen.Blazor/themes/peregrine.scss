@@ -18,30 +18,33 @@ $rz-success: #1ba572 !default; // product palette green
 $rz-warning: #d99919 !default; // product palette yellow
 $rz-danger: #ed5f74 !default; // product palette red
 
-$rz-series-1: #3700b3 !default;
-$rz-series-2: #ba68c8 !default;
-$rz-series-3: #f06292 !default;
-$rz-series-4: #ff8a65 !default;
-$rz-series-5: #ffee58 !default;
-$rz-series-6: #9ccc65 !default;
-$rz-series-7: #26a69a !default;
-$rz-series-8: #4fc3f7 !default;
-$rz-series-9: #7f5cce !default;
-$rz-series-10: #ce93d8 !default;
-$rz-series-11: #f48fb1 !default;
-$rz-series-12: #ffab91 !default;
-$rz-series-13: #fff176 !default;
-$rz-series-14: #aed581 !default;
-$rz-series-15: #4db6ac !default;
-$rz-series-16: #81d4fa !default;
-$rz-series-17: #a58cdd !default;
-$rz-series-18: #e1bee7 !default;
-$rz-series-19: #f8bbd0 !default;
-$rz-series-20: #ffccbc !default;
-$rz-series-21: #fff59d !default;
-$rz-series-22: #c5e1a5 !default;
-$rz-series-23: #80cbc4 !default;
-$rz-series-24: #b3e5fc !default;
+// Chart series (PDF data-viz, p. 53): Bright Orange leads as the emphasis series, the
+// blue range carries hierarchy, olives differentiate; 9–16 are 25% white tints of 1–8,
+// 17–24 are 50% tints. Derivation documented in docs/peregrine-theme/BRAND-SPEC.md.
+$rz-series-1: #ff6201 !default;
+$rz-series-2: #264757 !default;
+$rz-series-3: #9dc9da !default;
+$rz-series-4: #0076a0 !default;
+$rz-series-5: #757459 !default;
+$rz-series-6: #628899 !default;
+$rz-series-7: #c5c3a5 !default;
+$rz-series-8: #172935 !default;
+$rz-series-9: #ff8941 !default;
+$rz-series-10: #5c7581 !default;
+$rz-series-11: #b6d7e3 !default;
+$rz-series-12: #4098b8 !default;
+$rz-series-13: #989783 !default;
+$rz-series-14: #89a6b3 !default;
+$rz-series-15: #d4d2bc !default;
+$rz-series-16: #515f68 !default;
+$rz-series-17: #ffb180 !default;
+$rz-series-18: #93a3ab !default;
+$rz-series-19: #cee4ed !default;
+$rz-series-20: #80bbd0 !default;
+$rz-series-21: #babaac !default;
+$rz-series-22: #b1c4cc !default;
+$rz-series-23: #e2e1d2 !default;
+$rz-series-24: #8b949a !default;
 
 // Warm-gray neutral ramp from the PDF grays (#eeeeee/#dcdbd7/#a5a49f/#5a5955/#2b2926),
 // interpolated at 50/100/500/700; 900 = brand Black.
@@ -1464,6 +1467,63 @@ $progressbar-circular-value-endpoint: square !default;
 // Chart
 $chart-axis-color: var(--rz-base-300) !default;
 $chart-axis-label-color: var(--rz-base-500) !default;
+
+// Brand chart schemes — palette follows the series ramp; monochrome is the single-hue
+// blue ramp the PDF prescribes (p. 53); divergent runs structured blue → neutral →
+// Bright Orange.
+$chart-color-schemes: (
+  pastel: (
+    var(--rz-series-1),
+    var(--rz-series-2),
+    var(--rz-series-3),
+    var(--rz-series-4),
+    var(--rz-series-5),
+    var(--rz-series-6),
+    var(--rz-series-7),
+    var(--rz-series-8),
+    var(--rz-series-9),
+    var(--rz-series-10),
+    var(--rz-series-11),
+    var(--rz-series-12),
+    var(--rz-series-13),
+    var(--rz-series-14),
+    var(--rz-series-15),
+    var(--rz-series-16),
+    var(--rz-series-17),
+    var(--rz-series-18),
+    var(--rz-series-19),
+    var(--rz-series-20),
+    var(--rz-series-21),
+    var(--rz-series-22),
+    var(--rz-series-23),
+    var(--rz-series-24)
+  ),
+  palette: (
+    var(--rz-series-1),
+    var(--rz-series-2),
+    var(--rz-series-3),
+    var(--rz-series-4),
+    var(--rz-series-5),
+    var(--rz-series-6),
+    var(--rz-series-7),
+    var(--rz-series-8)
+  ),
+  monochrome: (#172935, #264757, #446878, #628899, #9dc9da, #b6d7e3, #cee4ed, #e2efff),
+  divergent: (#264757, #628899, #9dc9da, #cee4ed, #eeeeee, #ffdfbf, #ffb180, #ff8941, #ff6201)
+) !default;
+
+$rz-sankey-palette-colors: (
+  var(--rz-series-1),
+  var(--rz-series-2),
+  var(--rz-series-3),
+  var(--rz-series-4),
+  var(--rz-series-5),
+  var(--rz-series-6),
+  var(--rz-series-7),
+  var(--rz-series-8)
+) !default;
+$rz-sankey-monochrome-colors: (#172935, #264757, #446878, #628899, #80a9ba, #9dc9da, #b6d7e3, #cee4ed, #e2efff) !default;
+$rz-sankey-divergent-colors: (#172935, #264757, #446878, #628899, #80a9ba, #9dc9da, #cee4ed, #eeeeee, #ffdfbf, #ffc8a0, #ffb180, #ff9d61, #ff8941, #ff7621, #ff6201) !default;
 
 // Gauge
 $gauge-arc-scale-color: var(--rz-base-300) !default;

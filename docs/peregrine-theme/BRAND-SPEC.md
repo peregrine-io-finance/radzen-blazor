@@ -224,6 +224,16 @@ Note the tensions with Radzen defaults the implementation must reconcile: produc
 | `$rz-series-1..24` | blue ramp + tints (Blue 0–3 interpolated), Bright Orange as emphasis series, olives for differentiation | same hues dark-adjusted | PDF data-viz guidance (p. 53) |
 | Shadows | subtle, flat (site's light shadow usage) | subtle | no PDF elevation language |
 
+## Chart series derivation (implemented, Phase 5)
+
+Per the PDF data-viz guidance (p. 53): Bright Orange leads as the emphasis series, the blue range carries hierarchy, olives differentiate.
+
+**Light `$rz-series-1..8`** (base set): `#ff6201` (Bright Orange), `#264757` (Blue 1), `#9dc9da` (Blue 2), `#0076a0` (Trust), `#757459` (Olive 2), `#628899` (Blue 1↔2 midpoint), `#c5c3a5` (olive-sand), `#172935` (Blue 0). Series 9–16 = 25% white tints of 1–8; series 17–24 = 50% white tints.
+
+**Dark `$rz-series-1..8`**: same logic with navy-invisible deep blues swapped out — `#ff6201`, `#9dc9da` (Blue 2), `#4d9fbd` (Trust lightened 30%), `#e2efff` (Blue 3), `#c5c3a5`, `#628899`, `#f4ffad` (Olive 3), `#ffdfbf` (Light Orange). Series 9–16 = 25% white tints; 17–24 = dimmed 35% toward Blue 0.
+
+**Schemes**: `palette` routes through `var(--rz-series-1..8)`; `monochrome` is the single-hue Blue 0→Blue 3 ramp (light-first in dark mode); `divergent` runs structured blue → neutral → Bright Orange (bright ends, dim navy center in dark mode). The hardcoded sankey scheme lists were hoisted into `$rz-sankey-{palette,monochrome,divergent}-colors !default` in `_sankey.scss`; `$chart-color-schemes` was already overridable. Other themes' compiled CSS verified byte-identical.
+
 ## Remaining design calls
 
 1. `$rz-secondary`: PDF blues vs site teal `#23C4B5` (see table) — affects secondary buttons, chips, selection accents.

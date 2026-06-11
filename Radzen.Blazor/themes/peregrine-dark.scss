@@ -20,30 +20,33 @@ $rz-success: #27c291 !default; // product palette green (dark)
 $rz-warning: #e9b724 !default; // product palette yellow (dark)
 $rz-danger: #f57c93 !default; // product palette red (dark)
 
-$rz-series-1: #3700b3 !default;
-$rz-series-2: #ba68c8 !default;
-$rz-series-3: #f06292 !default;
-$rz-series-4: #ff8a65 !default;
-$rz-series-5: #ffee58 !default;
-$rz-series-6: #9ccc65 !default;
-$rz-series-7: #26a69a !default;
-$rz-series-8: #4fc3f7 !default;
-$rz-series-9: #7f5cce !default;
-$rz-series-10: #ce93d8 !default;
-$rz-series-11: #f48fb1 !default;
-$rz-series-12: #ffab91 !default;
-$rz-series-13: #fff176 !default;
-$rz-series-14: #aed581 !default;
-$rz-series-15: #4db6ac !default;
-$rz-series-16: #81d4fa !default;
-$rz-series-17: #a58cdd !default;
-$rz-series-18: #e1bee7 !default;
-$rz-series-19: #f8bbd0 !default;
-$rz-series-20: #ffccbc !default;
-$rz-series-21: #fff59d !default;
-$rz-series-22: #c5e1a5 !default;
-$rz-series-23: #80cbc4 !default;
-$rz-series-24: #b3e5fc !default;
+// Chart series, dark-adjusted: same brand logic with the deep navies (invisible on the
+// navy body) swapped for Blue 3 / lightened Trust / Olive 3 / Light Orange; 9–16 are 25%
+// white tints, 17–24 are dimmed 35% toward Blue 0. See BRAND-SPEC for the derivation.
+$rz-series-1: #ff6201 !default;
+$rz-series-2: #9dc9da !default;
+$rz-series-3: #4d9fbd !default;
+$rz-series-4: #e2efff !default;
+$rz-series-5: #c5c3a5 !default;
+$rz-series-6: #628899 !default;
+$rz-series-7: #f4ffad !default;
+$rz-series-8: #ffdfbf !default;
+$rz-series-9: #ff8941 !default;
+$rz-series-10: #b6d7e3 !default;
+$rz-series-11: #7ab7ce !default;
+$rz-series-12: #e9f3ff !default;
+$rz-series-13: #d4d2bc !default;
+$rz-series-14: #89a6b3 !default;
+$rz-series-15: #f7ffc2 !default;
+$rz-series-16: #ffe7cf !default;
+$rz-series-17: #ae4e13 !default;
+$rz-series-18: #6e91a0 !default;
+$rz-series-19: #3a768d !default;
+$rz-series-20: #9baab8 !default;
+$rz-series-21: #888d7e !default;
+$rz-series-22: #486776 !default;
+$rz-series-23: #a7b483 !default;
+$rz-series-24: #ae9f8f !default;
 
 // Navy surface ladder: body on Blue 0, surfaces stepping toward Blue 1;
 // text tiers Off-White / Blue 3 / Blue 2.
@@ -1491,6 +1494,62 @@ $progressbar-circular-value-endpoint: square !default;
 // Chart
 $chart-axis-color: var(--rz-base-300) !default;
 $chart-axis-label-color: var(--rz-text-secondary-color) !default;
+
+// Brand chart schemes, dark-adjusted for the navy body: monochrome runs light-first so
+// the leading series stay visible; divergent keeps bright ends with a dim navy center.
+$chart-color-schemes: (
+  pastel: (
+    var(--rz-series-1),
+    var(--rz-series-2),
+    var(--rz-series-3),
+    var(--rz-series-4),
+    var(--rz-series-5),
+    var(--rz-series-6),
+    var(--rz-series-7),
+    var(--rz-series-8),
+    var(--rz-series-9),
+    var(--rz-series-10),
+    var(--rz-series-11),
+    var(--rz-series-12),
+    var(--rz-series-13),
+    var(--rz-series-14),
+    var(--rz-series-15),
+    var(--rz-series-16),
+    var(--rz-series-17),
+    var(--rz-series-18),
+    var(--rz-series-19),
+    var(--rz-series-20),
+    var(--rz-series-21),
+    var(--rz-series-22),
+    var(--rz-series-23),
+    var(--rz-series-24)
+  ),
+  palette: (
+    var(--rz-series-1),
+    var(--rz-series-2),
+    var(--rz-series-3),
+    var(--rz-series-4),
+    var(--rz-series-5),
+    var(--rz-series-6),
+    var(--rz-series-7),
+    var(--rz-series-8)
+  ),
+  monochrome: (#e2efff, #cee4ed, #b6d7e3, #9dc9da, #80a9ba, #628899, #446878, #264757),
+  divergent: (#9dc9da, #80a9ba, #628899, #446878, #2b4552, #8b461b, #ae4e13, #dc5909, #ff6201)
+) !default;
+
+$rz-sankey-palette-colors: (
+  var(--rz-series-1),
+  var(--rz-series-2),
+  var(--rz-series-3),
+  var(--rz-series-4),
+  var(--rz-series-5),
+  var(--rz-series-6),
+  var(--rz-series-7),
+  var(--rz-series-8)
+) !default;
+$rz-sankey-monochrome-colors: (#e2efff, #cee4ed, #b6d7e3, #9dc9da, #80a9ba, #628899, #446878, #355868, #264757) !default;
+$rz-sankey-divergent-colors: (#e2efff, #cee4ed, #b6d7e3, #9dc9da, #80a9ba, #628899, #446878, #2b4552, #5d3a25, #8b461b, #ae4e13, #c5540e, #dc5909, #ff7621, #ff6201) !default;
 
 // Gauge
 $gauge-arc-scale-color: var(--rz-base-300) !default;

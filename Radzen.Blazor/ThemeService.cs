@@ -144,7 +144,7 @@ namespace Radzen
                 CardRadius = "0",
                 SeriesA = "#ff6201",
                 SeriesB = "#9dc9da",
-                SeriesC = "#e2efff"
+                SeriesC = "#4d9fbd"
             },
             new Theme {
                 Text = "Material 3",

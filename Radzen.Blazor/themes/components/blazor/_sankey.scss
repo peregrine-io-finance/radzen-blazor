@@ -8,6 +8,11 @@ $rz-sankey-label-color: var(--rz-text-color) !default;
 $rz-sankey-label-stroke: var(--rz-body-background-color) !default;
 $rz-sankey-label-stroke-width: 2px !default;
 
+// Color scheme palettes (themeable; series repeat when items exceed the list length)
+$rz-sankey-palette-colors: (#003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600) !default;
+$rz-sankey-monochrome-colors: (#004c6d, #255e7e, #3d708f, #5383a1, #6996b3, #7faac6, #94bed9, #abd2ec, #c1e7ff) !default;
+$rz-sankey-divergent-colors: (#00876c, #469f76, #70b77e, #98ce86, #c1e48e, #eaf898, #ffffad, #fed693, #fcaa78, #f77b5f, #ed4a46, #d92632, #c31e28, #aa1620, #8b0e1a) !default;
+
 // Component styles
 .rz-sankey-diagram {
     position: relative;
@@ -68,71 +73,35 @@ $rz-sankey-label-stroke-width: 2px !default;
     
     // Palette color scheme
     &.rz-scheme-palette {
-        $palette-colors: #003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600;
-        
-        @for $i from 0 through 7 {
+        @for $i from 0 through 23 {
             .rz-series-item-#{$i} {
                 &.rz-sankey-link,
                 rect {
-                    fill: nth($palette-colors, $i + 1);
-                }
-            }
-        }
-        
-        // Repeat colors for items beyond 8
-        @for $i from 8 through 23 {
-            .rz-series-item-#{$i} {
-                &.rz-sankey-link,
-                rect {
-                    fill: nth($palette-colors, ($i % 8) + 1);
+                    fill: nth($rz-sankey-palette-colors, ($i % length($rz-sankey-palette-colors)) + 1);
                 }
             }
         }
     }
-    
+
     // Monochrome color scheme
     &.rz-scheme-monochrome {
-        $mono-colors: #004c6d, #255e7e, #3d708f, #5383a1, #6996b3, #7faac6, #94bed9, #abd2ec, #c1e7ff;
-        
-        @for $i from 0 through 8 {
+        @for $i from 0 through 23 {
             .rz-series-item-#{$i} {
                 &.rz-sankey-link,
                 rect {
-                    fill: nth($mono-colors, $i + 1);
-                }
-            }
-        }
-        
-        // Repeat colors for items beyond 9
-        @for $i from 9 through 23 {
-            .rz-series-item-#{$i} {
-                &.rz-sankey-link,
-                rect {
-                    fill: nth($mono-colors, ($i % 9) + 1);
+                    fill: nth($rz-sankey-monochrome-colors, ($i % length($rz-sankey-monochrome-colors)) + 1);
                 }
             }
         }
     }
-    
+
     // Divergent color scheme
     &.rz-scheme-divergent {
-        $divergent-colors: #00876c, #469f76, #70b77e, #98ce86, #c1e48e, #eaf898, #ffffad, #fed693, #fcaa78, #f77b5f, #ed4a46, #d92632, #c31e28, #aa1620, #8b0e1a;
-        
-        @for $i from 0 through 14 {
+        @for $i from 0 through 23 {
             .rz-series-item-#{$i} {
                 &.rz-sankey-link,
                 rect {
-                    fill: nth($divergent-colors, $i + 1);
-                }
-            }
-        }
-        
-        // Repeat colors for items beyond 15
-        @for $i from 15 through 23 {
-            .rz-series-item-#{$i} {
-                &.rz-sankey-link,
-                rect {
-                    fill: nth($divergent-colors, ($i % 15) + 1);
+                    fill: nth($rz-sankey-divergent-colors, ($i % length($rz-sankey-divergent-colors)) + 1);
                 }
             }
         }
