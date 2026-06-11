@@ -113,6 +113,40 @@ namespace Radzen
         /// </summary>
         public static readonly Theme[] All = [
             new Theme {
+                Text = "Peregrine",
+                Value = "peregrine",
+                Primary = "#ff6201",
+                Secondary = "#264757",
+                Base = "#fffef9",
+                Selection = "rgba(255, 98, 1, 0.12)",
+                SelectionText = "#9c3c00",
+                Content = "#ffffff",
+                TitleText = "#111111",
+                ContentText = "#5a5955",
+                ButtonRadius = "0",
+                CardRadius = "0",
+                SeriesA = "#ff6201",
+                SeriesB = "#264757",
+                SeriesC = "#9dc9da"
+            },
+            new Theme {
+                Text = "Peregrine Dark",
+                Value = "peregrine-dark",
+                Primary = "#ff6201",
+                Secondary = "#9dc9da",
+                Base = "#172935",
+                Selection = "rgba(255, 98, 1, 0.16)",
+                SelectionText = "#ffffff",
+                Content = "#1c3340",
+                TitleText = "#fffef9",
+                ContentText = "#9dc9da",
+                ButtonRadius = "0",
+                CardRadius = "0",
+                SeriesA = "#ff6201",
+                SeriesB = "#9dc9da",
+                SeriesC = "#e2efff"
+            },
+            new Theme {
                 Text = "Material 3",
                 Value = "material3",
                 Premium = true,

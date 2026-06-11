@@ -110,6 +110,36 @@ namespace Radzen.Blazor.Tests
         }
 
         [Fact]
+        public void AppearanceToggle_Toggles_Peregrine_To_PeregrineDark()
+        {
+            using var ctx = new TestContext();
+            ctx.Services.AddScoped<ThemeService>();
+
+            var themeService = ctx.Services.GetRequiredService<ThemeService>();
+            themeService.SetTheme("peregrine");
+
+            var component = ctx.RenderComponent<RadzenAppearanceToggle>();
+            component.Find("button").Click();
+
+            Assert.Equal("peregrine-dark", themeService.Theme);
+        }
+
+        [Fact]
+        public void AppearanceToggle_Toggles_PeregrineDark_To_Peregrine()
+        {
+            using var ctx = new TestContext();
+            ctx.Services.AddScoped<ThemeService>();
+
+            var themeService = ctx.Services.GetRequiredService<ThemeService>();
+            themeService.SetTheme("peregrine-dark");
+
+            var component = ctx.RenderComponent<RadzenAppearanceToggle>();
+            component.Find("button").Click();
+
+            Assert.Equal("peregrine", themeService.Theme);
+        }
+
+        [Fact]
         public void AppearanceToggle_Accepts_CustomDarkTheme()
         {
             using var ctx = new TestContext();

@@ -61,6 +61,7 @@ namespace Radzen.Blazor
             "software-dark" => "software",
             "humanistic-dark" => "humanistic",
             "standard-dark" => "standard",
+            "peregrine-dark" => "peregrine",
             _ => ThemeService?.Theme ?? string.Empty,
         };
 
@@ -74,6 +75,7 @@ namespace Radzen.Blazor
             "software" => "software-dark",
             "humanistic" => "humanistic-dark",
             "standard" => "standard-dark",
+            "peregrine" => "peregrine-dark",
             _ => ThemeService?.Theme ?? string.Empty,
         };
 
