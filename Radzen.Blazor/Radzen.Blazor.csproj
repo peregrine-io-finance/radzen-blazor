@@ -45,7 +45,9 @@
          grabs the latest 10.x off nuget.org (which can exceed the installed runtime and break on a
          partially-published patch); the framework reference is deterministic against the installed
          targeting pack. Down-level targets keep their package references. -->
-    <FrameworkReference Include="Microsoft.AspNetCore.App" Condition="'$(TargetFramework)' == 'net10.0'" />
+    <!-- PrivateAssets keeps the framework reference from flowing to browser-wasm consumers
+         (the WASM demos fail with NETSDK1082 otherwise). -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" Condition="'$(TargetFramework)' == 'net10.0'" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>

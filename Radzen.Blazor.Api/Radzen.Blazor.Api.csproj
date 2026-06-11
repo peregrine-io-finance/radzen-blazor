@@ -8,6 +8,9 @@
   <ItemGroup>
     <PackageReference Include="Radzen.Blazor" Version="*" GeneratePathProperty="true" Condition="'$(Configuration)' == 'Release'" />
     <ProjectReference Include="..\Radzen.Blazor\Radzen.Blazor.csproj" Condition="'$(Configuration)' != 'Release'" />
+    <!-- Own Components reference: Radzen.Blazor's net10 FrameworkReference is private
+         (wasm-incompatible), so it no longer flows here transitively. -->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
