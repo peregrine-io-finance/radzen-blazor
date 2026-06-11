@@ -18,7 +18,7 @@ Read first: `THEME-ARCHITECTURE.md` (how theming works here), `BRAND-SPEC.md` (t
 
 ## Open items (resolve before or during Phase 1)
 
-1. **Brand palette confirmation** — the peregrine.io extraction in `BRAND-SPEC.md` provides a working palette (Courage `#ff601c` primary, Collaboration `#23c4b5` secondary, navy `#172935` dark surfaces). Cross-check against the Brand Guidelines PDF when it lands (drop point: `C:\Users\GarrettWomack\source\ClaudeProjects\radzen\brand\`) — the PDF may add ramps/neutrals the site doesn't expose.
+1. **Brand palette — RESOLVED.** The Brand Guidelines PDF v1 was extracted (2026-06-10): Bright Orange `#FF6201` accent, Blue 0–3 range (`#172935`/`#264757`/`#9DC9DA`/`#E2EFFF`), Black/Off-White foundation, gray + olive secondary ramps. See BRAND-SPEC's "Consolidated Radzen token mapping" for working Phase 1/2 values and the four remaining design calls (notably: `$rz-secondary` blues-vs-teal, and whether Bright Orange as `$rz-primary` spreads orange wider than the brand's "use sparingly" rule intends). Dark mode must anchor on Blue 0/Blue 1 navy — the PDF forbids black/dark-gray backgrounds.
 2. **Protocol web-embedding license** — softened: peregrine.io itself publicly serves the exact APK Protocol OTFs via `@font-face` (URLs in BRAND-SPEC), so web-serving has precedent; shipping them inside this package's static web assets and/or converting to WOFF2 should still be confirmed with #brand-design. **Owner: Garrett.** Fallback that needs no new clearance question: serve the same OTFs the site serves (`format('opentype')`).
 3. **Font roles** — resolved by the live site: Protocol 400 for body AND headings (headings differ by size/leading, not weight), Protocol 700 for buttons, Kale Sans Mono 400 uppercase for labels/overline ("intel" style). Confirm against PDF.
 4. **Kale has Regular only** — consistent with the site (labels only, never bold). Restrict Kale to overline/caption surfaces; no faux-bold.
@@ -45,7 +45,7 @@ Files: `peregrine.scss` + `peregrine-base.scss` (keep the pair in lockstep; only
 
 ### Phase 2 — Dark palette (feat)
 Files: `peregrine-dark.scss` + `peregrine-dark-base.scss`.
-- Design the dark ramp complementary to light (Phase 1 hues, dark-adjusted; product app dark `--theme-*` values in BRAND-SPEC are the reference for surface/text relationships).
+- Design the dark ramp complementary to light: **navy-anchored, not gray** — body on Blue 0 `#172935`, surfaces stepping through Blue 1 `#264757` and darkened blue tints (the PDF forbids black/dark-gray backgrounds; the live site's `data-theme=modern` is the precedent). Product app dark `--theme-*` values in BRAND-SPEC remain the reference for text-tier relationships.
 - Replicate the Material dark-delta pattern (~150 re-pointed component tokens — see THEME-ARCHITECTURE §2); don't assume light/dark symmetry, diff the pairs.
 - Verify `on-*` contrast pairs in dark.
 

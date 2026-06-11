@@ -6,8 +6,8 @@ Status of every design input feeding the `peregrine` theme, with values verbatim
 
 | Input | Source | Status |
 |---|---|---|
-| Brand color palette (2026) | Brand Guidelines PDF on SharePoint | **NOT YET RETRIEVED** — connector lacks `Sites.Read.All`; Garrett to drop the PDF in `C:\Users\GarrettWomack\source\ClaudeProjects\radzen\brand\`. Link: <https://peregrine65.sharepoint.com/:b:/s/Peregrine/IQB_mixtxr1sSIgEccL_rStRAWc0riczjKJgnvmmMM_lh_s?e=8kYo1r> |
-| Typography roles (Protocol vs Kale usage, sizes, weights) | Brand Guidelines PDF + Web styleguide Figma (`figma.com/design/JKxgwt3mlqXbaHqxLDbllx`) + peregrine.io live CSS | PDF pending; peregrine.io extraction below |
+| Brand color palette (2026) | Brand Guidelines PDF v1 (58 pp) | **EXTRACTED** (2026-06-10, text layer) — local copy: `C:\Users\GarrettWomack\OneDrive - Peregrine Technologies\Financial Statements\Claude Power Point\Peregrine Brand Guidelines [Notion].pdf`; full text dump: workspace `brand/pdf-text.txt` |
+| Typography roles (Protocol vs Kale usage, sizes, weights) | Brand Guidelines PDF type hierarchy + peregrine.io live CSS | **EXTRACTED** — both below; Web styleguide Figma remains optional corroboration |
 | Font files | SharePoint (inventoried below) | Done |
 | Product design system (UI semantics, dark mode reference) | Notion UI Kit pages (verbatim below) | Done |
 | Logos | Notion "Logo" page (SVG/PNG variants) + SharePoint Logo + Icon folder | Locations known; assets not needed for CSS-token work |
@@ -30,6 +30,70 @@ Location: `Peregrine site → Shared Documents/Design/2026- Peregrine Brand Fold
 **Roboto Mono** (folder `Roboto Mono`): Regular TTF — Microsoft-template fallback font; if ever needed on web, take woff2 from Google Fonts.
 
 Product app mono is **IBM Plex Mono** (open font) — see UI Kit tokens below. Font-role decision (headings/body/mono) pending PDF + peregrine.io.
+
+## Brand Guidelines PDF v1 — authoritative palette & typography
+
+Extracted from the embedded text layer of the 58-page guideline (pages cited). Where the PDF and peregrine.io disagree, see the reconciliation table below.
+
+### Primary colors (p. 22)
+
+"Black and Off-White form the foundation … The Blue range introduces depth, hierarchy, and adaptability across product surfaces, while Bright Orange functions as a high-visibility accent used sparingly for emphasis or critical actions."
+
+| Name | Hex | RGB | Role |
+|---|---|---|---|
+| Black | `#111111` | 17, 17, 17 | Foundation text/contrast |
+| Off-White | `#FFFEF9` | 255, 254, 249 | Foundation light surface |
+| Blue 0 | `#172935` | 23, 41, 53 | Darkest structured blue — dark surface anchor (= peregrine.io page bg) |
+| Blue 1 | `#264757` | 38, 71, 87 | Dark blue |
+| Blue 2 | `#9DC9DA` | 157, 201, 218 | Light blue |
+| Blue 3 | `#E2EFFF` | 226, 239, 255 | Palest blue tint |
+| Bright Orange | `#FF6201` | 255, 98, 1 | **High-visibility accent — CTAs/critical actions only, used sparingly** |
+
+### Secondary colors (p. 23)
+
+Grays "for structuring layouts, defining components, and supporting typography"; olives for "warmth … backgrounds, illustrations, and data states that require differentiation"; Light Orange as "a softer accent for non-critical highlights."
+
+| Name | Hex | Notes |
+|---|---|---|
+| Gray ramp (dark→light) | `#2B2926`, `#5A5955`, `#A5A49F`, `#DCDBD7`, `#EEEEEE` | PDF lists dark→light; numbering (Gray 1–5) inferred from listing order — confirm visually (the site names `#5A5955` "gray5") |
+| Light Orange | `#FFDFBF` | Soft accent, non-critical highlights |
+| Olive 1–3 | `#312617`, `#757459`, `#F4FFAD` | Warm family (site CSS names `#312617` "chocolate" and adds `#3D3C2A`/`#C5C3A5`) |
+
+### Usage rules that constrain the theme (pp. 22–30, 53–54)
+
+- Bright Orange: **never a background or decorative color**; reserved for CTAs, highlights, key data points, map emphasis.
+- **"Do not use black or dark grays as background"** — dark-mode surfaces should anchor on the structured blues (Blue 0/Blue 1), exactly as the live site does. No gradients. No unapproved color combos.
+- Pairings must meet **AA or AAA** contrast (p. 25 shows approved type/background pairs incl. orange→black text, light-orange→black).
+- Data viz (p. 53): "Use Bright Orange to highlight the key value … When a single-hue palette (like blues with lighter tints) communicates hierarchy clearly, rely on shading and scale instead" → chart series = blue ramp + tints, orange as the emphasis series.
+- Iconography (pp. 33–38): bespoke marketing icons on a 40×40 grid, explicitly **"not to replace functional UI icons within the product"** → keeping Material Symbols in the Radzen theme is consistent with the guideline.
+- Logo: black or white only; min 40px lockup / 20px symbol; clearspace = symbol height.
+
+### Type hierarchy (pp. 14–15, verbatim)
+
+Protocol is "the primary typeface … Use Regular for body content, Semi-Bold for emphasis, and Bold for statements requiring greater urgency." Kale Sans Mono for "captions or tiny details … to emote technicality, expertise and precision" — never for headlines (p. 19 misuse list).
+
+| Style | Face | Line height | Letter spacing |
+|---|---|---|---|
+| H1 | Protocol Regular | 90–100% | −2%–0% (numerals −4%–0%) |
+| H2 | Protocol Regular | 90–100% | −1%–0 |
+| Subhead | Protocol **Bold** | 100–110% | −1%–0 |
+| Body | Protocol Regular | 120–130% | −1%–0 |
+| Labels / Buttons / CTAs | Protocol **Semi-Bold** | — | −1%–0 |
+| Caption | **Kale Sans Mono** Regular | 120–130% | −1%–0 |
+
+Body-copy rules (p. 17): leading 120–130%, Regular for dense text, Bold sparingly for emphasis. Headlines left-aligned, no periods.
+
+### PDF ↔ peregrine.io reconciliation
+
+| Token | PDF (authoritative) | peregrine.io | Call |
+|---|---|---|---|
+| Brand orange | `#FF6201` | `#FF601C` (Courage), hover `#FF7621` | Use **`#FF6201`**; keep `#FF7621` as hover/light shade |
+| Dark surface | Blue 0 `#172935` | `#172935` (`data-theme=modern` bg) | Agree |
+| Light surface | Off-White `#FFFEF9` | `#FFFEF9` | Agree |
+| Blues | Blue 0–3 | `--token-blue0/2/3` same hexes | Agree |
+| Teal `#23C4B5` / blue `#0076A0` | **absent from PDF** | Collaboration (22 uses) / Trust (9 uses) | Website-only accents — candidates for `$rz-secondary`/`$rz-info`, needs a design call |
+| Button weight | Semi-Bold (600) | 700 | Minor; prefer PDF's 600, verify visually |
+| Radius | not specified (visuals are square) | `border-radius: 0` brand trait | Use 0 |
 
 ## peregrine.io live-site extraction (2026-06-10)
 
@@ -81,11 +145,7 @@ https://peregrine.io/_next/static/media/KaleSansMono_Regular-s.p.e770d234.otf
 ```
 (73–78 KB each; Kale 24 KB — small enough that woff2 conversion is an optimization, not a necessity.)
 
-**Provisional Radzen mapping** (to confirm against the PDF):
-- `$rz-primary: #ff601c` (Courage; hover/dark shade toward `#d35528`); `$rz-secondary: #23c4b5` (Collaboration); `$rz-info: #0076a0` (Trust)
-- Light: body `#fffef9`, text `#1d1d1d`/`#111`; Dark: surfaces from `#172935` (the site's "modern" navy — anchor for the dark neutral ramp), text white
-- success/warning/danger: no marketing-site equivalents — take from product palette (green `#1BA572`, yellow `#D99919`, red `#ED5F74`) per hybrid strategy
-- `$rz-border-radius: 0` (sharp corners); `$rz-text-font-family: 'Protocol', Arial, Helvetica, sans-serif`; headings Protocol 400 tight-leading; Kale for overline/caption-style "intel" text
+(Superseded where it conflicts with the PDF — see the reconciliation table above; the site remains the source for hover states, type scale pixel values, spacing tokens, easings, and font file URLs.)
 
 ## Product design system (verbatim from Notion)
 
@@ -145,12 +205,28 @@ Note the tensions with Radzen defaults the implementation must reconcile: produc
 - SharePoint folder: `…/Brand Assets/Notion Links for Brand Assets/Logo + Icon` (<https://peregrine65.sharepoint.com/:f:/r/sites/Peregrine/Shared%20Documents/Design/2026-%20Peregrine%20Brand%20Folder/Brand%20Assets/Notion%20Links%20for%20Brand%20Assets/Logo%20+%20Icon?csf=1&web=1&e=pXDJRi>)
 - Known-good PNG copies in Garrett's OneDrive: `Documents/Po Process/Logos/` (Peregrine-Logo-Black/White, Peregrine-Icon-Black/White).
 
-## What the Brand Guidelines PDF must answer (extraction checklist)
+## Consolidated Radzen token mapping (working values for Phase 1/2)
 
-When the PDF lands, extract verbatim into this doc:
-1. Primary/secondary brand colors with hex values — and any full palette/ramp
-2. Neutral/gray scale if defined
-3. Typography: Protocol vs Kale roles, weights in use, type scale (sizes/line-heights), letter-spacing
-4. Any dark-mode guidance (likely none — dark is a design exercise per plan)
-5. Any spacing/radius/elevation language
-6. Logo clearspace/min-size rules (reference only)
+| Radzen token | Light | Dark | Source/rationale |
+|---|---|---|---|
+| `$rz-primary` | `#FF6201` (Bright Orange) | `#FF6201` (verify contrast on navy; site uses it on `#172935` heavily) | PDF: the action/emphasis color; hover/light shade `#FF7621` (site) |
+| `$rz-secondary` | **design call**: Blue 1 `#264757` / Blue 2 `#9DC9DA` (PDF "structured blues") or Collaboration teal `#23C4B5` (site-only) | dark-adjusted same | PDF has no second accent; site uses teal |
+| `$rz-info` | Trust `#0076A0` (site) or Blue 1 | lighter blue (e.g. Blue 2) | no PDF state colors |
+| `$rz-success` / `$rz-warning` / `$rz-danger` | product palette `#1BA572` / `#D99919` / `#ED5F74` | product dark text variants (BRAND-SPEC product section) | hybrid strategy — brand defines no state colors |
+| Body background | Off-White `#FFFEF9` | **Blue 0 `#172935`** (NOT black/gray — PDF rule) | PDF + site agree |
+| Neutral ramp `$rz-base-*` | build from Gray ramp `#EEEEEE`→`#2B2926` + Off-White | build from Blue 0/Blue 1 + darkened steps (navy-tinted, not gray) | PDF grays (light) / PDF dark-bg rule (dark) |
+| Text | `#111111` titles, `#2B2926`/`#5A5955` secondary tiers | Off-White / Blue 2 / Blue 3 tiers | PDF pairings, AA/AAA required |
+| `$rz-border-radius` | `0` | `0` | site brand trait; PDF visuals square |
+| `$rz-text-font-family` | `'Protocol', Arial, Helvetica, sans-serif` | same | PDF primary typeface; metric fallback Arial (site) |
+| Headings | Protocol Regular (400), LH 0.9–1.0, LS −1/−2% | same | PDF type hierarchy — headings differ by size, not weight |
+| Buttons/labels | Protocol Semi-Bold (600) | same | PDF (site uses 700 — verify visually) |
+| Caption/overline | Kale Sans Mono 400, uppercase for "intel" labels | same | PDF + site; never headlines |
+| `$rz-series-1..24` | blue ramp + tints (Blue 0–3 interpolated), Bright Orange as emphasis series, olives for differentiation | same hues dark-adjusted | PDF data-viz guidance (p. 53) |
+| Shadows | subtle, flat (site's light shadow usage) | subtle | no PDF elevation language |
+
+## Remaining design calls
+
+1. `$rz-secondary`: PDF blues vs site teal `#23C4B5` (see table) — affects secondary buttons, chips, selection accents.
+2. Gray 1–5 numbering (assumed dark→light from PDF listing order; site names `#5A5955` "gray5") — confirm against PDF visuals before naming SCSS comments after them; hex values themselves are unambiguous.
+3. Semantic state colors are inherited from the product palette, not brand-approved — sanity-check with #brand-design (brand-team@peregrine.io per PDF p. 58) if visibility matters.
+4. Bright Orange as `$rz-primary` means orange spreads to everything Radzen colors "primary" (links, focus rings, active states, selection) — the brand wants orange *sparing*. Mitigation if it reads too loud: primary = Blue 1 with orange reserved for `$rz-secondary`/CTA-style buttons; decide during Phase 1 visual review.
