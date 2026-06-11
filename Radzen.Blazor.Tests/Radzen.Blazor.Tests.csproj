@@ -25,4 +25,11 @@
     <ProjectReference Include="..\Radzen.Blazor\Radzen.Blazor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Radzen.Blazor's net10 FrameworkReference is PrivateAssets=all, so the test host
+         must reference the shared framework itself (bunit's 9.x Components packages
+         otherwise win and fail with CS1705). -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
 </Project>
