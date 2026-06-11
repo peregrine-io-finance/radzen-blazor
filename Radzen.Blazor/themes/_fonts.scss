@@ -28,12 +28,42 @@ $fonts-path: '../fonts';
   }
 }
 
-@if $material == true {
+@if $material == true and $peregrine == false {
   @font-face {
     font-family: 'Roboto';
     src: url('#{$fonts-path}/RobotoFlex.woff2') format('woff2 supports variations'),
          url('#{$fonts-path}/RobotoFlex.woff2') format('woff2-variations');
     font-weight: 100 1000;
+    font-display: swap;
+  }
+}
+
+@if $peregrine == true {
+  // APK Protocol static styles + Kale Sans Mono (Regular only — no bold/italic exists),
+  // the exact OTFs peregrine.io serves publicly.
+  @each $weight, $file in (400: 'Regular', 600: 'SemiBold', 700: 'Bold') {
+    @font-face {
+      font-family: 'Protocol';
+      src: url('#{$fonts-path}/APKProtocol-#{$file}.otf') format('opentype');
+      font-style: normal;
+      font-weight: #{$weight};
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Protocol';
+      src: url('#{$fonts-path}/APKProtocol-#{$file}Italic.otf') format('opentype');
+      font-style: italic;
+      font-weight: #{$weight};
+      font-display: swap;
+    }
+  }
+
+  @font-face {
+    font-family: 'Kale Sans Mono';
+    src: url('#{$fonts-path}/KaleSansMono-Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
     font-display: swap;
   }
 }

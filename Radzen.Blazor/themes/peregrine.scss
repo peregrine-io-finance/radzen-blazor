@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 $material: true;
+$peregrine: true;
 $theme-name: peregrine;
 
 // Theme Colors
@@ -97,7 +98,7 @@ $rz-root-font-size: 16px !default;
 $rz-body-font-size: 1rem !default;
 $rz-body-line-height: 1.5 !default;
 $rz-body-background-color: #fffef9 !default; // Off-White
-$rz-text-font-family: Roboto, sans-serif !default;
+$rz-text-font-family: 'Protocol', Arial, Helvetica, sans-serif !default; // metric fallback Arial (site)
 $rz-outline-offset: 2px !default;
 $rz-outline-width: 2px !default;
 $rz-outline-color: var(--rz-primary) !default;
@@ -267,27 +268,29 @@ $rz-shadow-10: 0px 18px 40px -12px rgba(17, 17, 17, 0.50) !default;
 
 //---- Components
 
-// Typography
+// Typography — PDF type hierarchy at peregrine.io sizes: headings Protocol Regular with
+// tight leading and negative tracking (they differ by size, not weight); Semi-Bold 600 for
+// emphasis surfaces; Kale Sans Mono (Regular only) for caption/overline "intel" labels.
 $text: (
-  display-h1: (font-size: clamp(4.5rem, 6.667vw, 6rem), line-height: normal, font-weight: 400, letter-spacing: -1.5px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  display-h2: (font-size: clamp(3rem, 4.167vw, 3.75rem), line-height: normal,  font-weight: 400, letter-spacing: -0.5px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  display-h3: (font-size: clamp(2.25rem, 3.333vw, 3rem), line-height: normal,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
-  display-h4: (font-size: clamp(1.75rem, 2.361vw, 2.125rem), line-height: normal,  font-weight: 400, letter-spacing: 0.25px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  display-h5: (font-size: clamp(1.25rem, 1.667vw, 1.5rem), line-height: normal,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  display-h6: (font-size: clamp(1rem, 1.389vw, 1.25rem), line-height: normal,  font-weight: 500, letter-spacing: 0.15px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h1: (font-size: clamp(4.5rem, 6.667vw, 6rem), line-height: normal, font-weight: 400, letter-spacing: -1.5px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  h2: (font-size: clamp(3rem, 4.167vw, 3.75rem), line-height: normal,  font-weight: 400, letter-spacing: -0.5px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  h3: (font-size: clamp(2.25rem, 3.333vw, 3rem), line-height: normal,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
-  h4: (font-size: clamp(1.75rem, 2.361vw, 2.125rem), line-height: normal,  font-weight: 400, letter-spacing: 0.25px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h5: (font-size: clamp(1.25rem, 1.667vw, 1.5rem), line-height: normal,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h6: (font-size: clamp(1rem, 1.389vw, 1.25rem), line-height: normal,  font-weight: 500, letter-spacing: 0.15px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  subtitle1: (font-size: 1rem, line-height: 1.5,  font-weight: 400, letter-spacing: 0.15px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  subtitle2: (font-size: 0.875rem, line-height: 1.5,  font-weight: 500, letter-spacing: 0.1px, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  body1: (font-size: 1rem, line-height: 1.5,  font-weight: 400, letter-spacing: 0.5px, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  body2: (font-size: 0.875rem, line-height: 1.5,  font-weight: 400, letter-spacing: 0.25px, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  button: (font-size: 0.875rem, line-height: normal,  font-weight: 500, letter-spacing: 1.25px, text-transform: uppercase, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  caption: (font-size: 0.75rem, line-height: normal,  font-weight: 400, letter-spacing: 0.4px, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  overline:  (font-size: 0.625rem, line-height: normal,  font-weight: 400, letter-spacing: 1.5px, text-transform: uppercase, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h1: (font-size: clamp(3rem, 6.25vw, 5rem), line-height: 0.95, font-weight: 400, letter-spacing: -0.02em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  display-h2: (font-size: clamp(2.5rem, 3.75vw, 3rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  display-h3: (font-size: clamp(2rem, 3.125vw, 2.5rem), line-height: 1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
+  display-h4: (font-size: clamp(1.75rem, 2.5vw, 2rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h5: (font-size: clamp(1.5rem, 2.1875vw, 1.75rem), line-height: 1.1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h6: (font-size: clamp(1.25rem, 1.875vw, 1.5rem), line-height: 1.15,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h1: (font-size: clamp(3rem, 6.25vw, 5rem), line-height: 0.95, font-weight: 400, letter-spacing: -0.02em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  h2: (font-size: clamp(2.5rem, 3.75vw, 3rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  h3: (font-size: clamp(2rem, 3.125vw, 2.5rem), line-height: 1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
+  h4: (font-size: clamp(1.75rem, 2.5vw, 2rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h5: (font-size: clamp(1.5rem, 2.1875vw, 1.75rem), line-height: 1.1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h6: (font-size: clamp(1.25rem, 1.875vw, 1.5rem), line-height: 1.15,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  subtitle1: (font-size: 1rem, line-height: 1.5,  font-weight: 600, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  subtitle2: (font-size: 0.875rem, line-height: 1.5,  font-weight: 600, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  body1: (font-size: 1rem, line-height: 1.3,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  body2: (font-size: 0.875rem, line-height: 1.3,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  button: (font-size: 0.875rem, line-height: 1.1,  font-weight: 600, letter-spacing: 0, text-transform: none, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  caption: (font-family: ('Kale Sans Mono', 'Roboto Mono', monospace), font-size: 0.75rem, line-height: 1.25,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  overline:  (font-family: ('Kale Sans Mono', 'Roboto Mono', monospace), font-size: 0.625rem, line-height: 1.25,  font-weight: 400, letter-spacing: 0.08em, text-transform: uppercase, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
 ) !default;
 
 // Icon
@@ -311,9 +314,9 @@ $button-sizes: (
     height: auto,
     min-height: 3rem,
     min-width: 3rem,
-    font-weight: 500,
-    letter-spacing: 1.25px,
-    text-transform: uppercase,
+    font-weight: 600,
+    letter-spacing: 0,
+    text-transform: none,
     gap: 0.25rem,
     icon: (
       font-size: 1.5rem,
@@ -331,9 +334,9 @@ $button-sizes: (
     height: auto,
     min-height: 2.25rem,
     min-width: 2.25rem,
-    font-weight: 500,
-    letter-spacing: 1.25px,
-    text-transform: uppercase,
+    font-weight: 600,
+    letter-spacing: 0,
+    text-transform: none,
     gap: 0.25rem,
     icon: (
       font-size: 1.25rem,
@@ -351,9 +354,9 @@ $button-sizes: (
     height: auto,
     min-height: 1.75rem,
     min-width: 1.75rem,
-    font-weight: 500,
-    letter-spacing: 0.75px,
-    text-transform: uppercase,
+    font-weight: 600,
+    letter-spacing: 0,
+    text-transform: none,
     gap: 0.25rem,
     icon: (
       font-size: 1rem,
@@ -371,9 +374,9 @@ $button-sizes: (
     height: auto,
     min-height: 1.25rem,
     min-width: 1.25rem,
-    font-weight: 500,
+    font-weight: 600,
     letter-spacing: 0,
-    text-transform: uppercase,
+    text-transform: none,
     gap: 0.125rem,
     icon: (
       font-size: 1rem,
@@ -391,7 +394,7 @@ $button-sizes: (
 }
 
 // Badge
-$badge-font-weight: 500 !default;
+$badge-font-weight: 600 !default;
 
 // Chip
 $chip-border-radius: calc(4 * var(--rz-border-radius)) !default;
@@ -451,7 +454,7 @@ $accordion-item-padding-block: 1rem !default;
 $accordion-item-padding-inline: 1rem !default;
 $accordion-item-color: var(--rz-text-secondary-color) !default;
 $accordion-item-line-height: 1.5rem !default;
-$accordion-item-font-weight: 500 !default;
+$accordion-item-font-weight: 600 !default;
 $accordion-icon-margin-inline: 0 0.75rem !default;
 $accordion-toggle-icon-margin-inline: 0.75rem 0 !default;
 $accordion-toggle-icon-order: 1 !default;
@@ -469,7 +472,7 @@ $accordion-shadow: var(--rz-shadow-1) !default;
 // Panel
 $panel-padding: 1rem !default;
 $panel-title-line-height: 1.5rem !default;
-$panel-title-font-weight: 500 !default;
+$panel-title-font-weight: 600 !default;
 $panel-toggle-icon-background-color: transparent !default;
 $panel-hover-color: var(--rz-text-title-color) !default;
 $panel-shadow: var(--rz-shadow-1) !default;
@@ -518,7 +521,7 @@ $context-menu-box-shadow: var(--rz-shadow-6) !default;
 
 // PanelMenu
 $panel-menu-font-size: calc(var(--rz-body-font-size) * 0.875) !default;
-$panel-menu-font-weight: 500 !default;
+$panel-menu-font-weight: 600 !default;
 $panel-menu-item-line-height: 1.5rem !default;
 $panel-menu-item-padding-block: 1rem !default;
 $panel-menu-item-padding-inline: 1rem !default;
@@ -545,7 +548,7 @@ $panel-menu-item-2nd-level-hover-color: var(--rz-text-title-color) !default;
 $panel-menu-item-2nd-level-hover-background-color: var(--rz-base-100) !default;
 $panel-menu-item-2nd-level-active-color: var(--rz-on-primary-lighter) !default;
 $panel-menu-item-2nd-level-active-background-color: var(--rz-primary-lighter) !default;
-$panel-menu-item-2nd-level-active-font-weight: 500 !default;
+$panel-menu-item-2nd-level-active-font-weight: 600 !default;
 $panel-menu-item-3rd-level-color: var(--rz-text-tertiary-color) !default;
 $panel-menu-item-3rd-level-background-color: var(--rz-base-background-color) !default;
 $panel-menu-item-3rd-level-hover-color: var(--rz-text-title-color) !default;
@@ -1032,7 +1035,7 @@ $grid-header-cell-border-bottom: var(--rz-border-base-300) !default;
 $grid-header-background-color: var(--rz-base-background-color) !default;
 $grid-header-font-size: 0.875rem !default;
 $grid-header-line-height: 1.5rem !default;
-$grid-header-font-weight: 500 !default;
+$grid-header-font-weight: 600 !default;
 $grid-header-text-transform: none !default;
 $grid-header-color: var(--rz-text-title-color) !default;
 $grid-header-cell-padding: 0.75rem 0 !default;
@@ -1278,9 +1281,9 @@ $tabs-border-radius: 0 !default;
 $tabs-background-color: transparent !default;
 $tabs-tab-font-size: 0.875rem !default;
 $tabs-tab-line-height: 1.5rem !default;
-$tabs-tab-font-weight: 500 !default;
-$tabs-tab-text-transform: uppercase !default;
-$tabs-tab-letter-spacing: 1.25px !default;
+$tabs-tab-font-weight: 600 !default;
+$tabs-tab-text-transform: none !default;
+$tabs-tab-letter-spacing: 0 !default;
 $tabs-tab-padding-block: 0.75rem !default;
 $tabs-tab-padding-inline: 1rem !default;
 $tabs-tab-background-color: transparent !default;
@@ -1360,7 +1363,7 @@ $dialog-title-padding-block: 1.5rem 0 !default;
 $dialog-title-padding-inline: 1.5rem !default;
 $dialog-title-font-size: 1.25rem !default;
 $dialog-title-line-height: 1.5rem !default;
-$dialog-title-font-weight: 500 !default;
+$dialog-title-font-weight: 600 !default;
 $dialog-title-letter-spacing: .0125em !default;
 $dialog-title-color: var(--rz-text-title-color) !default;
 $dialog-close-font-size: var(--rz-icon-size) !default;
