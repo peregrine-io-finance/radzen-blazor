@@ -352,3 +352,7 @@ RadzenBlazorDemos/wwwroot/demos
 llms.txt
 RadzenBlazorDemos.Host/wwwroot/sitemap.xml
 RadzenBlazorDemos.Host/wwwroot/robots.txt
+
+# Peregrine fork: keep fork documentation tracked (upstream ignores *.md because demo pages generate markdown artifacts)
+!CLAUDE.md
+!docs/**/*.md
