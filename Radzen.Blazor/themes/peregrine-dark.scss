@@ -645,7 +645,7 @@ $checkbox-checked-disabled-background-color: var(--rz-base-300) !default;
 $checkbox-checked-shadow: none !default;
 $checkbox-checked-border: var(--rz-border-primary) !default;
 $checkbox-checked-hover-border: var(--rz-border-primary) !default;
-$checkbox-checked-disabled-border: var(--rz-border-300) !default;
+$checkbox-checked-disabled-border: var(--rz-border-base-300) !default;
 
 .rz-chkbox-box {
   &:after {

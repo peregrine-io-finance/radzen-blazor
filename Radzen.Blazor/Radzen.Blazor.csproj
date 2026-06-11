@@ -76,6 +76,9 @@
     <!-- The target runs before the compiler creates the intermediate dir, so the Touch below fails on a clean build. -->
     <MakeDir Directories="$(IntermediateOutputPath)" />
     <SassCompile InputFiles="@(SassFile)" OutputStyle="compressed" />
+    <!-- Clean single-TFM Release builds run this target before PrepareForBuild creates the
+         intermediate directory; Touch would fail with MSB3371 without it. -->
+    <MakeDir Directories="$(IntermediateOutputPath)" />
     <Touch Files="$(IntermediateOutputPath)sass.stamp" AlwaysCreate="true" />
   </Target>
 
