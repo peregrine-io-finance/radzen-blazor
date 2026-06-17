@@ -39,29 +39,23 @@ $fonts-path: '../fonts';
 }
 
 @if $peregrine == true {
-  // APK Protocol static styles + Kale Sans Mono (Regular only — no bold/italic exists),
-  // the exact OTFs peregrine.io serves publicly.
-  @each $weight, $file in (400: 'Regular', 600: 'SemiBold', 700: 'Bold') {
+  // Product-match typography: Inter (UI/body) + IBM Plex Mono (caption/overline) — the
+  // families app.peregrine.io serves. Latin-subset woff2 from Fontsource; both Inter and
+  // IBM Plex Mono are SIL OFL 1.1. The $rz-text-font-family stack keeps a system fallback
+  // so any glyph outside the Latin subset degrades gracefully.
+  @each $weight, $file in (400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold') {
     @font-face {
-      font-family: 'Protocol';
-      src: url('#{$fonts-path}/APKProtocol-#{$file}.otf') format('opentype');
+      font-family: 'Inter';
+      src: url('#{$fonts-path}/Inter-#{$file}.woff2') format('woff2');
       font-style: normal;
-      font-weight: #{$weight};
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Protocol';
-      src: url('#{$fonts-path}/APKProtocol-#{$file}Italic.otf') format('opentype');
-      font-style: italic;
       font-weight: #{$weight};
       font-display: swap;
     }
   }
 
   @font-face {
-    font-family: 'Kale Sans Mono';
-    src: url('#{$fonts-path}/KaleSansMono-Regular.otf') format('opentype');
+    font-family: 'IBM Plex Mono';
+    src: url('#{$fonts-path}/IBMPlexMono-Regular.woff2') format('woff2');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
