@@ -6,67 +6,67 @@ $theme-name: peregrine;
 
 // Theme Colors
 
-// Peregrine brand palette — Brand Guidelines PDF v1 pp. 22–23 (docs/peregrine-theme/BRAND-SPEC.md)
+// Peregrine product palette — app.peregrine.io --theme-* token layer (light)
+// (docs/peregrine-theme/peregrine-scss-plan.md §2). Full product-match.
 $rz-white: #ffffff !default;
-$rz-black: #111111 !default; // brand Black
+$rz-black: #111111 !default;
 
-$rz-base: #eeeeee !default; // brand gray (lightest)
-$rz-primary: #ff6201 !default; // Bright Orange — high-visibility accent
-$rz-secondary: #264757 !default; // Blue 1
-$rz-info: #0076a0 !default; // Trust blue (peregrine.io)
-$rz-success: #1ba572 !default; // product palette green
-$rz-warning: #d99919 !default; // product palette yellow
-$rz-danger: #ed5f74 !default; // product palette red
+$rz-base: #e1e6ea !default; // neutral 200
+$rz-primary: #678ef1 !default; // product blue (primary / info)
+$rz-secondary: #99a1a8 !default; // product neutral default
+$rz-info: #678ef1 !default; // product uses the blue family for info/links
+$rz-success: #1ba572 !default; // product green
+$rz-warning: #d99919 !default; // product yellow
+$rz-danger: #ed5f74 !default; // product red
 
-// Chart series (PDF data-viz, p. 53): Bright Orange leads as the emphasis series, the
-// blue range carries hierarchy, olives differentiate; 9–16 are 25% white tints of 1–8,
-// 17–24 are 50% tints. Derivation documented in docs/peregrine-theme/BRAND-SPEC.md.
-$rz-series-1: #ff6201 !default;
-$rz-series-2: #264757 !default;
-$rz-series-3: #9dc9da !default;
-$rz-series-4: #0076a0 !default;
-$rz-series-5: #757459 !default;
-$rz-series-6: #628899 !default;
-$rz-series-7: #c5c3a5 !default;
-$rz-series-8: #172935 !default;
-$rz-series-9: #ff8941 !default;
-$rz-series-10: #5c7581 !default;
-$rz-series-11: #b6d7e3 !default;
-$rz-series-12: #4098b8 !default;
-$rz-series-13: #989783 !default;
-$rz-series-14: #89a6b3 !default;
-$rz-series-15: #d4d2bc !default;
-$rz-series-16: #515f68 !default;
-$rz-series-17: #ffb180 !default;
-$rz-series-18: #93a3ab !default;
-$rz-series-19: #cee4ed !default;
-$rz-series-20: #80bbd0 !default;
-$rz-series-21: #babaac !default;
-$rz-series-22: #b1c4cc !default;
-$rz-series-23: #e2e1d2 !default;
-$rz-series-24: #8b949a !default;
+// Chart series — product 7-hue palette + neutral (1–8), 20% white tints (9–16), 40% tints
+// (17–24). See docs/peregrine-theme/peregrine-scss-plan.md §4.7.
+$rz-series-1: #678ef1 !default;
+$rz-series-2: #1ba572 !default;
+$rz-series-3: #d99919 !default;
+$rz-series-4: #e5734a !default;
+$rz-series-5: #ed5f74 !default;
+$rz-series-6: #d66fd6 !default;
+$rz-series-7: #9671f0 !default;
+$rz-series-8: #99a1a8 !default;
+$rz-series-9: #85a5f4 !default;
+$rz-series-10: #49b78e !default;
+$rz-series-11: #e1ad47 !default;
+$rz-series-12: #ea8f6e !default;
+$rz-series-13: #f17f90 !default;
+$rz-series-14: #de8cde !default;
+$rz-series-15: #ab8df3 !default;
+$rz-series-16: #adb4b9 !default;
+$rz-series-17: #a4bbf7 !default;
+$rz-series-18: #76c9aa !default;
+$rz-series-19: #e8c275 !default;
+$rz-series-20: #efab92 !default;
+$rz-series-21: #f49fac !default;
+$rz-series-22: #e6a9e6 !default;
+$rz-series-23: #c0aaf6 !default;
+$rz-series-24: #c2c7cb !default;
 
-// Warm-gray neutral ramp from the PDF grays (#eeeeee/#dcdbd7/#a5a49f/#5a5955/#2b2926),
-// interpolated at 50/100/500/700; 900 = brand Black.
-$rz-base-50: #fafaf7 !default;
-$rz-base-100: #f4f4f1 !default;
-$rz-base-200: #eeeeee !default;
-$rz-base-300: #dcdbd7 !default;
-$rz-base-400: #a5a49f !default;
-$rz-base-500: #8a8984 !default;
-$rz-base-600: #5a5955 !default;
-$rz-base-700: #44433f !default;
-$rz-base-800: #2b2926 !default;
-$rz-base-900: #111111 !default;
-$rz-base-light: #f4f4f1 !default;
-$rz-base-lighter: #fffef9 !default; // Off-White
-$rz-base-dark: #5a5955 !default;
-$rz-base-darker: #111111 !default;
+// Cool-grey neutral ramp interpolated from the product surfaces (canvas #edf0f2, opaque
+// divider #c9d1d6, neutral #99a1a8, text #1f2021). §4.3.
+$rz-base-50: #f7f9fa !default;
+$rz-base-100: #edf0f2 !default;
+$rz-base-200: #e1e6ea !default;
+$rz-base-300: #c9d1d6 !default;
+$rz-base-400: #99a1a8 !default;
+$rz-base-500: #767e86 !default;
+$rz-base-600: #565e66 !default;
+$rz-base-700: #3c4248 !default;
+$rz-base-800: #292d31 !default;
+$rz-base-900: #1f2021 !default;
+$rz-base-light: #edf0f2 !default;
+$rz-base-lighter: #ffffff !default;
+$rz-base-dark: #565e66 !default;
+$rz-base-darker: #1f2021 !default;
 
-$rz-primary-light: #ff7621 !default; // peregrine.io hover orange
+$rz-primary-light: mix($rz-white, $rz-primary, 20%) !default;
 $rz-primary-lighter: rgba($rz-primary, .12) !default;
-$rz-primary-dark: #ba4801 !default; // explicit: mix() shades leave white text under 4.5:1
-$rz-primary-darker: #9c3c00 !default;
+$rz-primary-dark: mix($rz-black, $rz-primary, 20%) !default;
+$rz-primary-darker: mix($rz-black, $rz-primary, 32%) !default;
 
 $rz-secondary-light: mix($rz-white, $rz-secondary, 20%) !default;
 $rz-secondary-lighter: rgba($rz-secondary, .12) !default;
@@ -96,12 +96,13 @@ $rz-danger-darker: mix($rz-black, $rz-danger, 32%) !default;
 // Theme Constants
 
 $rz-border-width: 1px !default;
-$rz-border-radius: 0px !default; // square corners are a brand trait
-$rz-root-font-size: 16px !default;
+$rz-border-radius: 3px !default;
+$rz-root-font-size: 14px !default;
 $rz-body-font-size: 1rem !default;
-$rz-body-line-height: 1.5 !default;
-$rz-body-background-color: #fffef9 !default; // Off-White
-$rz-text-font-family: 'Protocol', Arial, Helvetica, sans-serif !default; // metric fallback Arial (site)
+$rz-body-line-height: 1.4 !default;
+$rz-body-background-color: #edf0f2 !default; // product canvas
+$rz-base-background-color: #ffffff !default; // product surface (cards/panels)
+$rz-text-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !default;
 $rz-outline-offset: 2px !default;
 $rz-outline-width: 2px !default;
 $rz-outline-color: var(--rz-primary) !default;
@@ -174,22 +175,23 @@ $rz-theme-colors-map: map-merge(
     "on-base-dark": $rz-white,
     "on-base-darker": $rz-white,
 
-    // Contrast pairs verified ≥ 4.5:1 (AA). The PDF approves black text on orange (p. 25);
-    // white on Bright Orange is only 3.0:1.
-    "on-primary": $rz-black,
-    "on-primary-light": $rz-black,
+    // Product match: white text on the blue primary/info fills (the product's look — the
+    // ~3:1 ratio is intentional here; AA-safe pairs live in the -wcag variant). Neutral
+    // secondary takes dark text.
+    "on-primary": $rz-white,
+    "on-primary-light": $rz-white,
     "on-primary-lighter": $rz-primary-darker,
     "on-primary-dark": $rz-white,
     "on-primary-darker": $rz-white,
 
-    "on-secondary": $rz-white,
-    "on-secondary-light": $rz-white,
-    "on-secondary-lighter": $rz-secondary,
+    "on-secondary": $rz-black,
+    "on-secondary-light": $rz-black,
+    "on-secondary-lighter": $rz-secondary-darker,
     "on-secondary-dark": $rz-white,
     "on-secondary-darker": $rz-white,
 
     "on-info": $rz-white,
-    "on-info-light": $rz-black,
+    "on-info-light": $rz-white,
     "on-info-lighter": $rz-info-dark,
     "on-info-dark": $rz-white,
     "on-info-darker": $rz-white,
@@ -240,13 +242,18 @@ $rz-theme-colors-map: map-merge(
   $rz-theme-colors-map
 );
 
-// Semantic Text Color
+// Semantic Text Color — product text tiers are alpha over the surface (§4.4).
 $rz-text-title-color: var(--rz-base-900) !default;
-$rz-text-color: var(--rz-base-800) !default;
-$rz-text-secondary-color: var(--rz-base-700) !default;
-$rz-text-tertiary-color: var(--rz-base-600) !default;
-$rz-text-disabled-color: var(--rz-base-400) !default;
+$rz-text-color: var(--rz-base-900) !default;
+$rz-text-secondary-color: rgba(31, 32, 33, 0.66) !default;
+$rz-text-tertiary-color: rgba(31, 32, 33, 0.5) !default;
+$rz-text-disabled-color: rgba(31, 32, 33, 0.33) !default;
 $rz-text-contrast-color: var(--rz-white) !default;
+
+// Links — product blue (§4.4)
+$rz-link-color: #4168cb !default;
+$rz-link-hover-color: mix($rz-black, $rz-link-color, 20%) !default;
+$rz-link-hover-decoration: underline !default;
 
 // Borders
 
@@ -255,49 +262,48 @@ $rz-border-hover: var(--rz-border-width) solid var(--rz-base-900) !default;
 $rz-border-focus: var(--rz-border-width) solid var(--rz-primary) !default;
 $rz-border-disabled: var(--rz-border-width) solid var(--rz-base-300) !default;
 
-// Shadow — flat, subtle scale per peregrine.io (drop-shadow-lg ≈ shadow-4, hero ≈ shadow-10);
-// no Material elevation drama.
+// Shadow — product ring + soft drop: every level carries the 0 0 0 1px hairline ring.
+// 1 = product low, 3 = product medium, 6 = product high; 7–10 extrapolate the high drop.
 $rz-shadow-0: none !default;
-$rz-shadow-1: 0px 1px 2px rgba(17, 17, 17, 0.06), 0px 1px 1px rgba(17, 17, 17, 0.04) !default;
-$rz-shadow-2: 0px 2px 3px rgba(17, 17, 17, 0.07), 0px 1px 2px rgba(17, 17, 17, 0.05) !default;
-$rz-shadow-3: 0px 3px 6px rgba(17, 17, 17, 0.08), 0px 2px 4px rgba(17, 17, 17, 0.05) !default;
-$rz-shadow-4: 0px 4px 8px rgba(17, 17, 17, 0.10), 0px 2px 4px rgba(17, 17, 17, 0.06) !default;
-$rz-shadow-5: 0px 6px 12px rgba(17, 17, 17, 0.11), 0px 3px 6px rgba(17, 17, 17, 0.07) !default;
-$rz-shadow-6: 0px 8px 16px rgba(17, 17, 17, 0.12), 0px 4px 8px rgba(17, 17, 17, 0.08) !default;
-$rz-shadow-7: 0px 10px 20px rgba(17, 17, 17, 0.13), 0px 5px 10px rgba(17, 17, 17, 0.08) !default;
-$rz-shadow-8: 0px 12px 24px rgba(17, 17, 17, 0.14), 0px 6px 12px rgba(17, 17, 17, 0.09) !default;
-$rz-shadow-9: 0px 16px 32px -8px rgba(17, 17, 17, 0.35) !default;
-$rz-shadow-10: 0px 18px 40px -12px rgba(17, 17, 17, 0.50) !default;
+$rz-shadow-1: 0 0 0 1px rgba(28, 34, 38, 0.14) !default;
+$rz-shadow-2: 0 0 0 1px rgba(28, 34, 38, 0.12), 0 1px 1px rgba(28, 34, 38, 0.05) !default;
+$rz-shadow-3: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 1px 1px rgba(28, 34, 38, 0.05), 0 2px 4px rgba(28, 34, 38, 0.1) !default;
+$rz-shadow-4: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.08), 0 4px 10px rgba(28, 34, 38, 0.1) !default;
+$rz-shadow-5: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 6px 16px rgba(28, 34, 38, 0.1) !default;
+$rz-shadow-6: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 8px 24px rgba(28, 34, 38, 0.1) !default;
+$rz-shadow-7: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 12px 32px rgba(28, 34, 38, 0.12) !default;
+$rz-shadow-8: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 16px 48px rgba(28, 34, 38, 0.14) !default;
+$rz-shadow-9: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 24px 64px rgba(28, 34, 38, 0.18) !default;
+$rz-shadow-10: 0 0 0 1px rgba(28, 34, 38, 0.1), 0 2px 4px rgba(28, 34, 38, 0.1), 0 32px 80px rgba(28, 34, 38, 0.22) !default;
 
 //---- Components
 
-// Typography — PDF type hierarchy at peregrine.io sizes: headings Protocol Regular with
-// tight leading and negative tracking (they differ by size, not weight); Semi-Bold 600 for
-// emphasis surfaces; Kale Sans Mono (Regular only) for caption/overline "intel" labels.
+// Typography — product hierarchy: Inter 700 headings at modest sizes, line-height 1.4,
+// no negative tracking; IBM Plex Mono for caption/overline "intel" labels. §4.6 (14px root).
 $text: (
-  display-h1: (font-size: clamp(3rem, 6.25vw, 5rem), line-height: 0.95, font-weight: 400, letter-spacing: -0.02em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  display-h2: (font-size: clamp(2.5rem, 3.75vw, 3rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  display-h3: (font-size: clamp(2rem, 3.125vw, 2.5rem), line-height: 1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
-  display-h4: (font-size: clamp(1.75rem, 2.5vw, 2rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  display-h5: (font-size: clamp(1.5rem, 2.1875vw, 1.75rem), line-height: 1.1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  display-h6: (font-size: clamp(1.25rem, 1.875vw, 1.5rem), line-height: 1.15,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h1: (font-size: clamp(3rem, 6.25vw, 5rem), line-height: 0.95, font-weight: 400, letter-spacing: -0.02em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  h2: (font-size: clamp(2.5rem, 3.75vw, 3rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
-  h3: (font-size: clamp(2rem, 3.125vw, 2.5rem), line-height: 1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
-  h4: (font-size: clamp(1.75rem, 2.5vw, 2rem), line-height: 1.05,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h5: (font-size: clamp(1.5rem, 2.1875vw, 1.75rem), line-height: 1.1,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  h6: (font-size: clamp(1.25rem, 1.875vw, 1.5rem), line-height: 1.15,  font-weight: 400, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  subtitle1: (font-size: 1rem, line-height: 1.5,  font-weight: 600, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  subtitle2: (font-size: 0.875rem, line-height: 1.5,  font-weight: 600, letter-spacing: -0.01em, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  body1: (font-size: 1rem, line-height: 1.3,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  body2: (font-size: 0.875rem, line-height: 1.3,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  button: (font-size: 0.875rem, line-height: 1.1,  font-weight: 600, letter-spacing: 0, text-transform: none, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  caption: (font-family: ('Kale Sans Mono', 'Roboto Mono', monospace), font-size: 0.75rem, line-height: 1.25,  font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
-  overline:  (font-family: ('Kale Sans Mono', 'Roboto Mono', monospace), font-size: 0.625rem, line-height: 1.25,  font-weight: 400, letter-spacing: 0.08em, text-transform: uppercase, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h1: (font-size: 2.857rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  display-h2: (font-size: 2rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  display-h3: (font-size: 1.714rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
+  display-h4: (font-size: 1.429rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h5: (font-size: 1.143rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  display-h6: (font-size: 1rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h1: (font-size: 2.857rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  h2: (font-size: 2rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 1rem),
+  h3: (font-size: 1.714rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.75rem),
+  h4: (font-size: 1.429rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h5: (font-size: 1.143rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  h6: (font-size: 1rem, line-height: 1.4, font-weight: 700, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  subtitle1: (font-size: 1rem, line-height: 1.4, font-weight: 600, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  subtitle2: (font-size: 0.875rem, line-height: 1.4, font-weight: 600, letter-spacing: 0, color: var(--rz-text-title-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  body1: (font-size: 1rem, line-height: 1.4, font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  body2: (font-size: 0.875rem, line-height: 1.4, font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  button: (font-size: 0.875rem, line-height: 1.3, font-weight: 500, letter-spacing: 0, text-transform: none, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  caption: (font-family: ('IBM Plex Mono', ui-monospace, 'Roboto Mono', monospace), font-size: 0.75rem, line-height: 1.4, font-weight: 400, letter-spacing: 0, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
+  overline: (font-family: ('IBM Plex Mono', ui-monospace, 'Roboto Mono', monospace), font-size: 0.6875rem, line-height: 1.4, font-weight: 400, letter-spacing: 0.08em, text-transform: uppercase, color: var(--rz-text-color), margin-block-start: 0, margin-block-end: 0.5rem),
 ) !default;
 
 // Icon
-$rz-icon-size: 1.5rem !default;
+$rz-icon-size: 1.15rem !default; // product icons are ~16px
 $rz-icon-optical-size: 40 !default;
 
 // Button
@@ -1508,8 +1514,8 @@ $chart-color-schemes: (
     var(--rz-series-7),
     var(--rz-series-8)
   ),
-  monochrome: (#172935, #264757, #446878, #628899, #9dc9da, #b6d7e3, #cee4ed, #e2efff),
-  divergent: (#264757, #628899, #9dc9da, #cee4ed, #eeeeee, #ffdfbf, #ffb180, #ff8941, #ff6201)
+  monochrome: (#1f3a78, #2f53b0, #4a72d9, #678ef1, #8aa6f5, #aac0f8, #cbd9fb, #e9eefe),
+  divergent: (#2f53b0, #678ef1, #a4bbf7, #cdd9f5, #edf0f2, #f6cbb5, #efab92, #e5734a, #c2532b)
 ) !default;
 
 $rz-sankey-palette-colors: (
@@ -1522,8 +1528,8 @@ $rz-sankey-palette-colors: (
   var(--rz-series-7),
   var(--rz-series-8)
 ) !default;
-$rz-sankey-monochrome-colors: (#172935, #264757, #446878, #628899, #80a9ba, #9dc9da, #b6d7e3, #cee4ed, #e2efff) !default;
-$rz-sankey-divergent-colors: (#172935, #264757, #446878, #628899, #80a9ba, #9dc9da, #cee4ed, #eeeeee, #ffdfbf, #ffc8a0, #ffb180, #ff9d61, #ff8941, #ff7621, #ff6201) !default;
+$rz-sankey-monochrome-colors: (#1f3a78, #2f53b0, #4a72d9, #678ef1, #8aa6f5, #aac0f8, #cbd9fb, #e0e8fd, #eef2fe) !default;
+$rz-sankey-divergent-colors: (#1f3a78, #2f53b0, #4a72d9, #678ef1, #8aa6f5, #aac0f8, #cbd9fb, #edf0f2, #f6e0d4, #f6cbb5, #efab92, #e98e6a, #e5734a, #d35f38, #c2532b) !default;
 
 // Gauge
 $gauge-arc-scale-color: var(--rz-base-300) !default;
