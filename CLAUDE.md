@@ -2,13 +2,17 @@
 
 Peregrine Technologies' fork of [radzenhq/radzen-blazor](https://github.com/radzenhq/radzen-blazor) (110+ MIT Blazor components). The fork exists to carry the **`peregrine` / `peregrine-dark` theme family** (Peregrine brand) plus minimal build fixes as a small patch stack on top of upstream release tags.
 
-## Active work: Peregrine theme implementation
+## Active work — CURRENT PRIORITY #1: Peregrine theme = product-match retheme
 
-The theme scaffold (copied from Material) is in place but still renders as Material — implementing the brand is the current project. **Start here:**
+Retheming `peregrine` / `peregrine-dark` to match the **app.peregrine.io** product UI (light + dark) is the **top priority** in this repo right now. Prep and design decisions are **done** — the next step is implementing the SCSS. **Start here, in order:**
 
-- `docs/peregrine-theme/IMPLEMENTATION-PLAN.md` — phases, decisions made, open items
-- `docs/peregrine-theme/BRAND-SPEC.md` — design inputs (palette, fonts, product tokens) and their status
-- `docs/peregrine-theme/THEME-ARCHITECTURE.md` — how Radzen theming works (read before touching SCSS)
+1. **`docs/peregrine-theme/CLAUDE.md`** — task brief: locked decisions + implementation order. Read first.
+2. **`docs/peregrine-theme/peregrine-scss-plan.md`** — authoritative spec: decoded product tokens (both modes), exact `$rz-*` mapping, derivations, WCAG/build/verify.
+3. `docs/peregrine-theme/captures/` — backing product-CSS captures (reference).
+
+Background (strategy superseded 2026-06-16 — full product-match, not the old "hybrid"): `IMPLEMENTATION-PLAN.md` (phase process), `BRAND-SPEC.md` (product values valid; strategy superseded), `THEME-ARCHITECTURE.md` (read before touching SCSS).
+
+> _Spin-down: delete `docs/peregrine-theme/CLAUDE.md` and revert this section when the retheme ships or focus changes._
 
 ## Fork management
 

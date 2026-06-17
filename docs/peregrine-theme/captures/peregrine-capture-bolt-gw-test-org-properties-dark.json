@@ -1,0 +1,478 @@
+{
+    "meta":  {
+                 "capturedAt":  "2026-06-16T23:25:13.986Z",
+                 "url":  "https://app.peregrine.io/bolt/gw_test_org/properties",
+                 "page":  "bolt-gw-test-org-properties",
+                 "detectedMode":  "dark",
+                 "forced":  false,
+                 "sampleElement":  "body.theme-dark",
+                 "sampleBackground":  "rgb(31, 32, 33)",
+                 "sampleLuminance":  0.014341354537113472,
+                 "blueprintVersions":  [
+
+                                       ],
+                 "counts":  {
+                                "customProperties":  63,
+                                "tokenRules":  2,
+                                "anchorsMatched":  4,
+                                "fonts":  34,
+                                "stylesheets":  4
+                            }
+             },
+    "customProperties":  {
+                             "--border-radius":  "",
+                             "--btn-bg":  "",
+                             "--scrollbar-size":  "10px",
+                             "--surface-bg":  "",
+                             "--theme-background-color-blue":  "103,142,241",
+                             "--theme-background-color-default":  "153,161,168",
+                             "--theme-background-color-green":  "27,165,114",
+                             "--theme-background-color-inverted":  "248,249,250",
+                             "--theme-background-color-orange":  "229,115,74",
+                             "--theme-background-color-pink":  "214,111,214",
+                             "--theme-background-color-purple":  "150,113,240",
+                             "--theme-background-color-red":  "237,95,116",
+                             "--theme-background-color-white":  "255,255,255",
+                             "--theme-background-color-yellow":  "217,153,25",
+                             "--theme-box-shadow-high":  "0 0 0 1px rgba(255,255,255,0.2),0 2px 4px rgba(0,0,0,0.5),0 8px 24px rgba(0,0,0,0.5)",
+                             "--theme-box-shadow-low":  "0 0 0 1px rgba(255,255,255,0.2)",
+                             "--theme-box-shadow-medium":  "0 0 0 1px rgba(255,255,255,0.2),0 1px 1px rgba(0,0,0,0.5),0 2px 4px rgba(0,0,0,0.5)",
+                             "--theme-button-background":  "[object Object]",
+                             "--theme-color-alias-backdrop":  "rgba(0,0,0,0.55)",
+                             "--theme-color-alias-button":  "rgba(64,68,72,0.95)",
+                             "--theme-color-alias-canvas-background":  "26,27,28",
+                             "--theme-color-alias-shadow-color":  "rgba(0,0,0,0.5)",
+                             "--theme-color-alias-table-stripe":  "rgba(255,255,255,0.03)",
+                             "--theme-divider-color-default":  "255,255,255",
+                             "--theme-divider-color-inverted":  "28,34,38",
+                             "--theme-divider-color-opaque":  "74,80,84",
+                             "--theme-divider-contrast-default":  "0.08",
+                             "--theme-divider-contrast-high":  "0.16",
+                             "--theme-divider-contrast-low":  "0.08",
+                             "--theme-divider-contrast-medium":  "0.12",
+                             "--theme-get":  "(t,n=`default`)=\u003ee[t][n]",
+                             "--theme-icon-color-blue":  "103,142,241",
+                             "--theme-icon-color-default":  "255,255,255",
+                             "--theme-icon-color-green":  "27,165,114",
+                             "--theme-icon-color-inverted":  "31,32,33",
+                             "--theme-icon-color-orange":  "229,115,74",
+                             "--theme-icon-color-pink":  "214,111,214",
+                             "--theme-icon-color-purple":  "150,113,240",
+                             "--theme-icon-color-red":  "237,95,116",
+                             "--theme-icon-color-white":  "255,255,255",
+                             "--theme-icon-color-yellow":  "217,153,25",
+                             "--theme-input-background-color":  "rgba(0,0,0,0.5)",
+                             "--theme-is-dark":  "true",
+                             "--theme-mobile":  "[object Object]",
+                             "--theme-name":  "dark",
+                             "--theme-surface-background-color-bottom":  "31,32,33",
+                             "--theme-surface-background-color-default":  "31,32,33",
+                             "--theme-surface-background-color-high":  "31,32,33",
+                             "--theme-surface-background-color-inverted":  "255,255,255",
+                             "--theme-surface-background-color-low":  "54,57,60",
+                             "--theme-surface-background-color-medium":  "42,44,46",
+                             "--theme-surface-background-color-top":  "42,44,46",
+                             "--theme-tab-list-background-color":  "rgba(0,0,0,0.5)",
+                             "--theme-text-color-blue":  "133,173,247",
+                             "--theme-text-color-default":  "255,255,255",
+                             "--theme-text-color-green":  "39,194,145",
+                             "--theme-text-color-inverted":  "31,32,33",
+                             "--theme-text-color-orange":  "240,146,100",
+                             "--theme-text-color-pink":  "231,142,231",
+                             "--theme-text-color-purple":  "181,144,247",
+                             "--theme-text-color-red":  "245,124,147",
+                             "--theme-text-color-white":  "255,255,255",
+                             "--theme-text-color-yellow":  "233,183,36"
+                         },
+    "tokenRules":  [
+                       {
+                           "sheet":  "(inline)",
+                           "selector":  ".theme-light",
+                           "count":  59,
+                           "cssText":  ".theme-light { --theme-name: light; --theme-is-dark: false; --theme-background-color-default: 153,161,168; --theme-background-color-blue: 103,142,241; --theme-background-color-green: 27,165,114; --theme-background-color-yellow: 217,153,25; --theme-background-color-orange: 229,115,74; --theme-background-color-red: 237,95,116; --theme-background-color-pink: 214,111,214; --theme-background-color-purple: 150,113,240; --theme-background-color-inverted: 74,80,84; --theme-background-color-white: 255,255,255; --theme-icon-color-default: 74,80,84; --theme-icon-color-blue: 103,142,241; --theme-icon-color-green: 27,165,114; --theme-icon-color-yellow: 217,153,25; --theme-icon-color-orange: 229,115,74; --theme-icon-color-red: 237,95,116; --theme-icon-color-pink: 214,111,214; --theme-icon-color-purple: 150,113,240; --theme-icon-color-inverted: 255,255,255; --theme-icon-color-white: 255,255,255; --theme-text-color-default: 31,32,33; --theme-text-color-blue: 65,104,203; --theme-text-color-green: 0,127,76; --theme-text-color-yellow: 179,115,0; --theme-text-color-orange: 191,77,36; --theme-text-color-red: 199,57,78; --theme-text-color-pink: 176,73,176; --theme-text-color-purple: 112,75,202; --theme-text-color-inverted: 255,255,255; --theme-text-color-white: 255,255,255; --theme-divider-color-default: 28,34,38; --theme-divider-color-inverted: 255,255,255; --theme-divider-color-opaque: 201,209,214; --theme-divider-contrast-default: 0.08; --theme-divider-contrast-low: 0.08; --theme-divider-contrast-medium: 0.12; --theme-divider-contrast-high: 0.16; --theme-surface-background-color-default: 255,255,255; --theme-surface-background-color-low: 237,240,242; --theme-surface-background-color-medium: 248,249,250; --theme-surface-background-color-high: 255,255,255; --theme-surface-background-color-inverted: 31,32,33; --theme-surface-background-color-bottom: 248,249,250; --theme-surface-background-color-top: 255,255,255; --theme-box-shadow-low: 0 0 0 1px rgba(28,34,38,0.14); --theme-box-shadow-medium: 0 0 0 1px rgba(28,34,38,0.1),0 1px 1px rgba(28,34,38,0.05),0 2px 4px rgba(28,34,38,0.1); --theme-box-shadow-high: 0 0 0 1px rgba(28,34,38,0.1),0 2px 4px rgba(28,34,38,0.1),0 8px 24px rgba(28,34,38,0.1); --theme-button-background: [object Object]; --theme-color-alias-backdrop: rgba(28,34,38,0.4); --theme-color-alias-button: rgba(255,255,255,0.95); --theme-color-alias-canvas-background: 237,240,242; --theme-color-alias-shadow-color: rgba(28,34,38,0.1); --theme-color-alias-table-stripe: rgba(74,80,84,0.04); --theme-input-background-color: 255,255,255; --theme-tab-list-background-color: rgba(28,34,38,0.1); --theme-mobile: [object Object]; --theme-get: (t,n=`default`)=\u003ee[t][n]; }"
+                       },
+                       {
+                           "sheet":  "(inline)",
+                           "selector":  ".theme-dark",
+                           "count":  59,
+                           "cssText":  ".theme-dark { --theme-name: dark; --theme-is-dark: true; --theme-background-color-default: 153,161,168; --theme-background-color-blue: 103,142,241; --theme-background-color-green: 27,165,114; --theme-background-color-yellow: 217,153,25; --theme-background-color-orange: 229,115,74; --theme-background-color-red: 237,95,116; --theme-background-color-pink: 214,111,214; --theme-background-color-purple: 150,113,240; --theme-background-color-inverted: 248,249,250; --theme-background-color-white: 255,255,255; --theme-icon-color-default: 255,255,255; --theme-icon-color-blue: 103,142,241; --theme-icon-color-green: 27,165,114; --theme-icon-color-yellow: 217,153,25; --theme-icon-color-orange: 229,115,74; --theme-icon-color-red: 237,95,116; --theme-icon-color-pink: 214,111,214; --theme-icon-color-purple: 150,113,240; --theme-icon-color-inverted: 31,32,33; --theme-icon-color-white: 255,255,255; --theme-text-color-default: 255,255,255; --theme-text-color-blue: 133,173,247; --theme-text-color-green: 39,194,145; --theme-text-color-yellow: 233,183,36; --theme-text-color-orange: 240,146,100; --theme-text-color-red: 245,124,147; --theme-text-color-pink: 231,142,231; --theme-text-color-purple: 181,144,247; --theme-text-color-inverted: 31,32,33; --theme-text-color-white: 255,255,255; --theme-divider-color-default: 255,255,255; --theme-divider-color-inverted: 28,34,38; --theme-divider-color-opaque: 74,80,84; --theme-divider-contrast-default: 0.08; --theme-divider-contrast-low: 0.08; --theme-divider-contrast-medium: 0.12; --theme-divider-contrast-high: 0.16; --theme-surface-background-color-default: 31,32,33; --theme-surface-background-color-low: 54,57,60; --theme-surface-background-color-medium: 42,44,46; --theme-surface-background-color-high: 31,32,33; --theme-surface-background-color-inverted: 255,255,255; --theme-surface-background-color-bottom: 31,32,33; --theme-surface-background-color-top: 42,44,46; --theme-box-shadow-low: 0 0 0 1px rgba(255,255,255,0.2); --theme-box-shadow-medium: 0 0 0 1px rgba(255,255,255,0.2),0 1px 1px rgba(0,0,0,0.5),0 2px 4px rgba(0,0,0,0.5); --theme-box-shadow-high: 0 0 0 1px rgba(255,255,255,0.2),0 2px 4px rgba(0,0,0,0.5),0 8px 24px rgba(0,0,0,0.5); --theme-button-background: [object Object]; --theme-color-alias-backdrop: rgba(0,0,0,0.55); --theme-color-alias-button: rgba(64,68,72,0.95); --theme-color-alias-canvas-background: 26,27,28; --theme-color-alias-shadow-color: rgba(0,0,0,0.5); --theme-color-alias-table-stripe: rgba(255,255,255,0.03); --theme-input-background-color: rgba(0,0,0,0.5); --theme-tab-list-background-color: rgba(0,0,0,0.5); --theme-mobile: [object Object]; --theme-get: (t,n=`default`)=\u003ee[t][n]; }"
+                       }
+                   ],
+    "anchors":  {
+                    "html":  {
+                                 "font-family":  "Inter, sans-serif",
+                                 "font-size":  "13px",
+                                 "font-weight":  "400",
+                                 "line-height":  "18.2px",
+                                 "letter-spacing":  "normal",
+                                 "color":  "rgb(0, 0, 0)",
+                                 "background-color":  "rgba(0, 0, 0, 0)",
+                                 "border-color":  "rgb(0, 0, 0)",
+                                 "border-top-color":  "rgb(0, 0, 0)",
+                                 "border-bottom-color":  "rgb(0, 0, 0)",
+                                 "border-width":  "0px",
+                                 "border-style":  "none",
+                                 "border-radius":  "0px",
+                                 "box-shadow":  "none",
+                                 "outline":  "rgb(0, 0, 0) none 2.4px",
+                                 "padding":  "0px",
+                                 "height":  "1308px",
+                                 "min-height":  "0px",
+                                 "gap":  "normal",
+                                 "fill":  "rgb(0, 0, 0)"
+                             },
+                    "body":  {
+                                 "font-family":  "Inter, sans-serif",
+                                 "font-size":  "13px",
+                                 "font-weight":  "400",
+                                 "line-height":  "18.2px",
+                                 "letter-spacing":  "normal",
+                                 "color":  "rgb(255, 255, 255)",
+                                 "background-color":  "rgb(31, 32, 33)",
+                                 "border-color":  "rgb(255, 255, 255)",
+                                 "border-top-color":  "rgb(255, 255, 255)",
+                                 "border-bottom-color":  "rgb(255, 255, 255)",
+                                 "border-width":  "0px",
+                                 "border-style":  "none",
+                                 "border-radius":  "0px",
+                                 "box-shadow":  "none",
+                                 "outline":  "rgb(255, 255, 255) none 2.4px",
+                                 "padding":  "0px",
+                                 "height":  "1308px",
+                                 "min-height":  "0px",
+                                 "gap":  "normal",
+                                 "fill":  "rgb(0, 0, 0)"
+                             },
+                    "h1":  null,
+                    "h2":  null,
+                    "h3":  null,
+                    "h4":  null,
+                    "h5":  null,
+                    "h6":  null,
+                    "p":  null,
+                    "a":  {
+                              "font-family":  "Inter, sans-serif",
+                              "font-size":  "13px",
+                              "font-weight":  "400",
+                              "line-height":  "18.2px",
+                              "letter-spacing":  "normal",
+                              "color":  "rgb(133, 173, 247)",
+                              "background-color":  "rgba(0, 0, 0, 0)",
+                              "border-color":  "rgb(133, 173, 247)",
+                              "border-top-color":  "rgb(133, 173, 247)",
+                              "border-bottom-color":  "rgb(133, 173, 247)",
+                              "border-width":  "0px",
+                              "border-style":  "none",
+                              "border-radius":  "0px",
+                              "box-shadow":  "none",
+                              "outline":  "rgb(133, 173, 247) none 2.4px",
+                              "padding":  "0px",
+                              "height":  "20px",
+                              "min-height":  "auto",
+                              "gap":  "normal",
+                              "fill":  "rgb(0, 0, 0)"
+                          },
+                    "small":  null,
+                    "code":  null,
+                    "label":  {
+                                  "font-family":  "Inter, sans-serif",
+                                  "font-size":  "13px",
+                                  "font-weight":  "400",
+                                  "line-height":  "18.2px",
+                                  "letter-spacing":  "normal",
+                                  "color":  "rgb(255, 255, 255)",
+                                  "background-color":  "rgba(153, 161, 168, 0.24)",
+                                  "border-color":  "rgb(255, 255, 255)",
+                                  "border-top-color":  "rgb(255, 255, 255)",
+                                  "border-bottom-color":  "rgb(255, 255, 255)",
+                                  "border-width":  "0px",
+                                  "border-style":  "none",
+                                  "border-radius":  "500px",
+                                  "box-shadow":  "none",
+                                  "outline":  "rgb(255, 255, 255) none 2.4px",
+                                  "padding":  "0px 12px",
+                                  "height":  "26px",
+                                  "min-height":  "26px",
+                                  "gap":  "normal",
+                                  "fill":  "rgb(0, 0, 0)"
+                              },
+                    ".bp4-button":  null,
+                    ".bp4-button.bp4-intent-primary":  null,
+                    ".bp4-button.bp4-intent-success":  null,
+                    ".bp4-button.bp4-intent-warning":  null,
+                    ".bp4-button.bp4-intent-danger":  null,
+                    ".bp4-button.bp4-minimal":  null,
+                    ".bp4-button.bp4-small":  null,
+                    ".bp4-button.bp4-large":  null,
+                    ".bp4-button.bp4-disabled":  null,
+                    ".bp4-button[disabled]":  null,
+                    ".bp4-input":  null,
+                    ".bp4-input.bp4-large":  null,
+                    ".bp4-input-group":  null,
+                    ".bp4-text-area":  null,
+                    ".bp4-select select":  null,
+                    ".bp4-form-group":  null,
+                    ".bp4-label":  null,
+                    ".bp4-form-helper-text":  null,
+                    ".bp4-control":  null,
+                    ".bp4-checkbox":  null,
+                    ".bp4-switch":  null,
+                    ".bp4-radio":  null,
+                    ".bp4-slider":  null,
+                    ".bp4-menu":  null,
+                    ".bp4-menu-item":  null,
+                    ".bp4-menu-item.bp4-active":  null,
+                    ".bp4-menu-item.bp4-selected":  null,
+                    ".bp4-menu-divider":  null,
+                    ".bp4-navbar":  null,
+                    ".bp4-navbar-heading":  null,
+                    ".bp4-tabs":  null,
+                    ".bp4-tab":  null,
+                    ".bp4-card":  null,
+                    ".bp4-card.bp4-elevation-1":  null,
+                    ".bp4-dialog":  null,
+                    ".bp4-dialog-header":  null,
+                    ".bp4-dialog-footer":  null,
+                    ".bp4-popover":  null,
+                    ".bp4-tooltip":  null,
+                    ".bp4-callout":  null,
+                    ".bp4-html-table":  null,
+                    ".bp4-html-table th":  null,
+                    ".bp4-html-table td":  null,
+                    ".bp4-tag":  null,
+                    ".bp4-tag.bp4-minimal":  null,
+                    ".bp4-heading":  null
+                },
+    "fonts":  [
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "400",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "400",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "400",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "400",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "400",
+                      "style":  "normal",
+                      "status":  "loaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "500",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "500",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "500",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "500",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "500",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "600",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "600",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "600",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "600",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "600",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "700",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "700",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "700",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "700",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "IBM Plex Mono",
+                      "weight":  "700",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "italic",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "unloaded"
+                  },
+                  {
+                      "family":  "Inter",
+                      "weight":  "100 900",
+                      "style":  "normal",
+                      "status":  "loaded"
+                  }
+              ],
+    "stylesheets":  [
+                        {
+                            "href":  "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900\u0026family=IBM+Plex+Mono:wght@400;500;600;700\u0026display=swap",
+                            "media":  "",
+                            "ruleCount":  null,
+                            "bytes":  12543
+                        },
+                        {
+                            "href":  "https://assets.peregrine.io/git-896dd2638bd447cda01a073fa0d326a7399f2cec/assets/index-DuBFcT3D.css",
+                            "media":  "",
+                            "ruleCount":  249,
+                            "bytes":  51548
+                        },
+                        {
+                            "href":  null,
+                            "media":  "",
+                            "ruleCount":  981,
+                            "bytes":  96108
+                        },
+                        {
+                            "href":  "https://assets.peregrine.io/git-896dd2638bd447cda01a073fa0d326a7399f2cec/assets/DataTopology-CCFel_uE.css",
+                            "media":  "",
+                            "ruleCount":  89,
+                            "bytes":  6914
+                        }
+                    ]
+}

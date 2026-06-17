@@ -1,5 +1,11 @@
 # Peregrine Brand Spec — Design Inputs for the Radzen Theme
 
+> **⚠ Strategy superseded 2026-06-16.** The theme now targets **full product-match** (see
+> **[`peregrine-scss-plan.md`](peregrine-scss-plan.md)**), not the "hybrid" described below. The
+> **"Product design system" values in this doc remain valid** and were corroborated by live captures; the
+> marketing-brand inputs (Bright Orange primary, Protocol/Kale fonts, square radius, navy dark) are **no longer
+> the direction**. Use this doc for product values, not for strategy.
+
 Status of every design input feeding the `peregrine` theme, with values verbatim where known. Sourced 2026-06-10 from the Notion workspace, SharePoint, and the live product app; verified by an adversarial second pass. Strategy (decided): **hybrid** — 2026 brand identity for fonts and primary colors, product UI Kit for UI semantics.
 
 ## Source-of-truth map

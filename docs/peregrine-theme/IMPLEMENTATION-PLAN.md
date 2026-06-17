@@ -1,5 +1,13 @@
 # Peregrine Theme — Implementation Plan
 
+> **⚠ Strategy changed 2026-06-16 — full product-match.** The implementation source of truth is now
+> **[`peregrine-scss-plan.md`](peregrine-scss-plan.md)** — decoded product `--theme-*` tokens (both modes,
+> verified across 12 captures) + the exact `$rz-*` mapping. It **supersedes the "hybrid" decision and several
+> rows below**: primary `#FF6201` → **`#678EF1`**; fonts Protocol/Kale → **Inter + IBM Plex Mono**; radius
+> `0` → **3px**; root `16px` → **14px**; dark navy `#172935` → **product cool-grey `#1A1B1C`/`#1F2021`**;
+> headings 400-weight `clamp()` → **700, modest sizes**; chart series brand → **product palette**. The
+> **phase structure (0–7) below still applies as process** — take the *values* from the new plan.
+
 Goal: implement the Peregrine Technologies brand into the `peregrine` / `peregrine-dark` theme profiles (plus WCAG variants) of this Radzen Blazor fork. The scaffold (commit `5fc5fddb`) renders identically to Material today — every Material value is a placeholder to replace.
 
 Read first: `THEME-ARCHITECTURE.md` (how theming works here), `BRAND-SPEC.md` (the design inputs and their status).
