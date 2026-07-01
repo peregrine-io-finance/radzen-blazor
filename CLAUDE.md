@@ -4,17 +4,17 @@ Peregrine Technologies' fork of [radzenhq/radzen-blazor](https://github.com/radz
 
 ## Fork management
 
-- `master` = upstream release tag + peregrine patches. **Never merge upstream — rebase**: `git fetch upstream` → create `backup/master-pre-<tag>-rebase` → `git rebase v<tag>` → verify build → `git push --force-with-lease origin master`. Currently based on **v10.4.9**.
+- `master` = upstream release tag + peregrine patches. **Never merge upstream — rebase**: `git fetch upstream` → create `backup/master-pre-<tag>-rebase` → `git rebase v<tag>` → verify build → `git push --force-with-lease origin master`. Currently based on **v11.0.5**.
 - **After a rebase, audit the theme for upstream drift.** A new upstream tag can add or restructure components whose shared partials reference new `$rz-*` / `$component-*` variables the peregrine themes don't set — those render with upstream (Material) defaults until themed. Diff the upstream variable surface against what the peregrine `*.scss` files set, give any new variables product-aligned values (all four non-wcag files in lockstep — see Theming quick facts; regenerate the wcag pair if the palette changed), then visual-verify on the demo site (`/dashboard`, `?theme=peregrine`).
 - Remotes: `origin` = peregrine-io-finance/radzen-blazor, `upstream` = radzenhq/radzen-blazor.
-- Release tags: `v<upstream>+peregrine.<n>` (e.g. `v10.4.9+peregrine.1`); counter resets when rebasing onto a newer upstream.
+- Release tags: `v<upstream>+peregrine.<n>` (e.g. `v11.0.5+peregrine.1`); counter resets when rebasing onto a newer upstream.
 - Keep the patch stack rebase-friendly: prefer additive changes (new files, flag-guarded blocks) over editing upstream files; isolate shared-file edits in their own commits.
 - Conventional commits: `feat:` / `fix:` / `chore:` / `docs:`, imperative, < 72 chars.
 
 ## Build
 
 ```powershell
-dotnet build Radzen.Blazor/Radzen.Blazor.csproj -c Release   # all TFMs: net7/8/9/10
+dotnet build Radzen.Blazor/Radzen.Blazor.csproj -c Release   # all TFMs: net8/9/10
 dotnet test Radzen.Blazor.Tests                               # xUnit + bUnit, ~100 classes
 ```
 
